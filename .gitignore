@@ -1,0 +1,6 @@
+ColorPalette/.vs
+ColorPalette/bin/Debug/*
+ColorPalette/obj/*
+ColorPaletteTest/.vs
+ColorPaletteTest/bin/*
+ColorPaletteTest/obj/*
