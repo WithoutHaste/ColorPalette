@@ -9,6 +9,8 @@ namespace WithoutHaste.Drawing.ColorPalette
 {
 	internal static class Utilities
 	{
+		private const int ALPHA_MAX = 255;
+
 		public static Word[] BreakIntoWords(byte[] bytes)
 		{
 			List<Word> words = new List<Word>();
@@ -27,7 +29,7 @@ namespace WithoutHaste.Drawing.ColorPalette
 			if(red < 0 || red > 255) throw new ArgumentException(ErrorMessages.RedOutOfRange, new Exception("Red: " + red));
 			if(green < 0 || green > 255) throw new ArgumentException(ErrorMessages.GreenOutOfRange, new Exception("Green: " + green));
 			if(blue < 0 || blue > 255) throw new ArgumentException(ErrorMessages.BlueOutOfRange, new Exception("Blue: " + blue));
-			return Color.FromArgb(1, red, green, blue);
+			return Color.FromArgb(ALPHA_MAX, red, green, blue);
 		}
 
 		/// <param name="hue">Range [0, 360)</param>

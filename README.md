@@ -8,7 +8,7 @@ Library file located at ColorPalette/bin/Release/WithoutHaste.Drawing.ColorPalet
 
 ## Requirements
 
-System.Drawing
+System.Drawing.dll
 
 ## Formats Supported
 
