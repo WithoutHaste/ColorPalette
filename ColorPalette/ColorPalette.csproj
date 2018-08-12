@@ -45,6 +45,7 @@
     <Compile Include="API.cs" />
     <Compile Include="ErrorMessages.cs" />
     <Compile Include="FormatACO.cs" />
+    <Compile Include="HSV.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="IO.cs" />
     <Compile Include="Utilities.cs" />

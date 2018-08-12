@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace WithoutHaste.Drawing.ColorPalette
 {
-	internal static class Utilities
+	public static class Utilities
 	{
-		private const int ALPHA_MAX = 255;
+		internal const int ALPHA_MAX = 255;
 
-		public static Word[] BreakIntoWords(byte[] bytes)
+		internal static Word[] BreakIntoWords(byte[] bytes)
 		{
 			List<Word> words = new List<Word>();
 			for(int i=0; i<bytes.Length-1; i+=2)
@@ -30,6 +30,11 @@ namespace WithoutHaste.Drawing.ColorPalette
 			if(green < 0 || green > 255) throw new ArgumentException(ErrorMessages.GreenOutOfRange, new Exception("Green: " + green));
 			if(blue < 0 || blue > 255) throw new ArgumentException(ErrorMessages.BlueOutOfRange, new Exception("Blue: " + blue));
 			return Color.FromArgb(ALPHA_MAX, red, green, blue);
+		}
+
+		public static Color ColorFromHSV(HSV hsv)
+		{
+			return ColorFromHSV(hsv.Hue, hsv.Saturation, hsv.Value);
 		}
 
 		/// <param name="hue">Range [0, 360)</param>
@@ -83,6 +88,41 @@ namespace WithoutHaste.Drawing.ColorPalette
 			return ColorFromRGB(red, green, blue);
 		}
 
+		/// <summary>
+		/// Converts RGB to HSV, ignoring Alpha
+		/// </summary>
+		public static HSV HSVFromColor(Color color)
+		{
+			float rPrime = color.R / 255f;
+			float gPrime = color.G / 255f;
+			float bPrime = color.B / 255f;
+			float cMax = Math.Max(Math.Max(rPrime, gPrime), bPrime);
+			float cMin = Math.Min(Math.Min(rPrime, gPrime), bPrime);
+			float delta = cMax - cMin;
+			float hue = 0;
+			if(delta == 0)
+			{
+				hue = 0;
+			}
+			else if(cMax == rPrime)
+			{
+				hue = 60 * PositiveMod((int)((gPrime - bPrime) / delta), 6);
+			}
+			else if(cMax == gPrime)
+			{
+				hue = 60 * (((bPrime - rPrime) / delta) + 2);
+			}
+			else //cMax == bPrime
+			{
+				hue = 60 * (((rPrime - gPrime) / delta) + 4);
+			}
+			float saturation = (cMax == 0) ? 0 : (delta / cMax);
+			saturation = RoundTo2Decimals(saturation);
+			float value = cMax;
+			value = RoundTo2Decimals(value);
+			return new HSV(hue, saturation, value);
+		}
+
 		/// <param name="cyan">Range [0, 1]</param>
 		/// <param name="magenta">Range [0, 1]</param>
 		/// <param name="yellow">Range [0, 1]</param>
@@ -97,6 +137,21 @@ namespace WithoutHaste.Drawing.ColorPalette
 			int green = (int)(255 * (1 - magenta) * (1 - black));
 			int blue = (int)(255 * (1 - yellow) * (1 - black));
 			return ColorFromRGB(red, green, blue);
+		}
+
+		internal static int PositiveMod(int number, int modulus)
+		{
+			number = number % modulus;
+			while(number < 0)
+			{
+				number += modulus;
+			}
+			return number;
+		}
+
+		internal static float RoundTo2Decimals(float number)
+		{
+			return (float)(Math.Round((double)number, 2));
 		}
 	}
 }
