@@ -1,0 +1,4 @@
+E:\GitHub\ColorPalette\ColorPalette\bin\Release\WithoutHaste.Drawing.ColorPalette.dll
+E:\GitHub\ColorPalette\ColorPalette\bin\Release\WithoutHaste.Drawing.ColorPalette.pdb
+E:\GitHub\ColorPalette\ColorPalette\obj\Release\WithoutHaste.Drawing.ColorPalette.dll
+E:\GitHub\ColorPalette\ColorPalette\obj\Release\WithoutHaste.Drawing.ColorPalette.pdb

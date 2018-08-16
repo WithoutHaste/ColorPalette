@@ -1,0 +1,5 @@
+E:\GitHub\ColorPalette\ColorPalette\bin\Debug\WithoutHaste.Drawing.ColorPalette.dll
+E:\GitHub\ColorPalette\ColorPalette\bin\Debug\WithoutHaste.Drawing.ColorPalette.pdb
+E:\GitHub\ColorPalette\ColorPalette\obj\Debug\ColorPalette.csprojResolveAssemblyReference.cache
+E:\GitHub\ColorPalette\ColorPalette\obj\Debug\WithoutHaste.Drawing.ColorPalette.dll
+E:\GitHub\ColorPalette\ColorPalette\obj\Debug\WithoutHaste.Drawing.ColorPalette.pdb

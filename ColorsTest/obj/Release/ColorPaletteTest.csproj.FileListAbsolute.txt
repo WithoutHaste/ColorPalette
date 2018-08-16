@@ -1,0 +1,8 @@
+E:\GitHub\ColorPalette\ColorPaletteTest\obj\Release\ColorPaletteTest.csprojResolveAssemblyReference.cache
+E:\GitHub\ColorPalette\ColorPaletteTest\bin\Release\ColorPaletteTest.dll
+E:\GitHub\ColorPalette\ColorPaletteTest\bin\Release\ColorPaletteTest.pdb
+E:\GitHub\ColorPalette\ColorPaletteTest\bin\Release\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+E:\GitHub\ColorPalette\ColorPaletteTest\bin\Release\WithoutHaste.Drawing.ColorPalette.dll
+E:\GitHub\ColorPalette\ColorPaletteTest\bin\Release\WithoutHaste.Drawing.ColorPalette.pdb
+E:\GitHub\ColorPalette\ColorPaletteTest\obj\Release\ColorPaletteTest.dll
+E:\GitHub\ColorPalette\ColorPaletteTest\obj\Release\ColorPaletteTest.pdb
