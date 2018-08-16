@@ -7,19 +7,9 @@ using System.Threading.Tasks;
 
 namespace WithoutHaste.Drawing.Colors
 {
-	public static class Utilities
+	public static class ConvertColors
 	{
 		internal const int ALPHA_MAX = 255;
-
-		internal static Word[] BreakIntoWords(byte[] bytes)
-		{
-			List<Word> words = new List<Word>();
-			for(int i=0; i<bytes.Length-1; i+=2)
-			{
-				words.Add(new Word(bytes[i], bytes[i+1]));
-			}
-			return words.ToArray();
-		}
 
 		/// <param name="red">Range [0, 255]</param>
 		/// <param name="green">Range [0, 255]</param>

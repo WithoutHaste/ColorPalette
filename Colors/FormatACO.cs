@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,7 +10,7 @@ namespace WithoutHaste.Drawing.Colors
 	/// <summary>
 	/// Photoshop *.aco color palette file format.
 	/// </summary>
-	internal class FormatACO
+	public class FormatACO
 	{
 //		private static Rounding PHOTOSHOP_ROUNDING = Rounding.Down;
 
@@ -20,7 +21,7 @@ namespace WithoutHaste.Drawing.Colors
 
 		public FormatACO(byte[] bytes)
 		{
-			words = Utilities.BreakIntoWords(bytes).Select(word => word.ConvertBetweenBigEndianAndLittleEndian()).ToArray();
+			words = IO.BreakIntoWords(bytes).Select(word => word.ConvertBetweenBigEndianAndLittleEndian()).ToArray();
 			int version = words[0].ToInt();
 			int colorCount = words[1].ToInt();
 			int index = 2;
@@ -39,6 +40,19 @@ namespace WithoutHaste.Drawing.Colors
 				index = LoadVersion2(colorCount, index);
 			}
 
+		}
+
+		public static ColorPalette Load(string fullFilename)
+		{
+			IO.ValidateFilename(fullFilename, ".aco");
+			byte[] fileBytes = File.ReadAllBytes(fullFilename);
+			FormatACO aco = new FormatACO(fileBytes);
+			return aco.ColorPalette;
+		}
+
+		public static void Save(string fullFilename, ColorPalette palette)
+		{
+			throw new NotImplementedException("Todo: save .aco file format.");
 		}
 
 		/// <summary>
@@ -111,7 +125,7 @@ namespace WithoutHaste.Drawing.Colors
 			w = (int)Math.Floor((decimal)(w / 256));
 			x = (int)Math.Floor((decimal)(x / 256));
 			y = (int)Math.Floor((decimal)(y / 256));
-			colorPalette.Add(Utilities.ColorFromRGB(w, x, y));
+			colorPalette.Add(ConvertColors.ColorFromRGB(w, x, y));
 		}
 
 		private void ConvertColorSpace1(int w, int x, int y)
@@ -119,7 +133,7 @@ namespace WithoutHaste.Drawing.Colors
 			w = (int)Math.Floor((decimal)(w / 182.04));
 			x = (int)Math.Floor((decimal)(x / 655.35));
 			y = (int)Math.Floor((decimal)(y / 655.35));
-			colorPalette.Add(Utilities.ColorFromHSV(w, x / 100, y / 100));
+			colorPalette.Add(ConvertColors.ColorFromHSV(w, x / 100, y / 100));
 		}
 
 		private void ConvertColorSpace2(int w, int x, int y, int z)
@@ -128,7 +142,7 @@ namespace WithoutHaste.Drawing.Colors
 			x = (int)Math.Floor((decimal)((100 - x) / 655.35));
 			y = (int)Math.Floor((decimal)((100 - y) / 655.35));
 			z = (int)Math.Floor((decimal)((100 - z) / 655.35));
-			colorPalette.Add(Utilities.ColorFromCMYK(w / 100, x / 100, y / 100, z / 100));
+			colorPalette.Add(ConvertColors.ColorFromCMYK(w / 100, x / 100, y / 100, z / 100));
 		}
 
 		private bool EndOfFile(int index)

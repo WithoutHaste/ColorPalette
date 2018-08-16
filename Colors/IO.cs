@@ -9,15 +9,27 @@ namespace WithoutHaste.Drawing.Colors
 {
 	internal static class IO
 	{
-		public static uint[] LoadBinaryMacFile(string fullFilename)
+		internal static uint[] LoadBinaryMacFile(string fullFilename)
 		{
 			byte[] fileBytes = File.ReadAllBytes(fullFilename);
-			return Utilities.BreakIntoWords(fileBytes)
+			return BreakIntoWords(fileBytes)
 				.Select(word => word.ConvertBetweenBigEndianAndLittleEndian())
 				.Select(word => word.ToUInt()).ToArray();
 		}
 
-		public static ColorPalette LoadACO(string fullFilename)
+		internal static Word[] BreakIntoWords(byte[] bytes)
+		{
+			List<Word> words = new List<Word>();
+			for(int i = 0; i < bytes.Length - 1; i += 2)
+			{
+				words.Add(new Word(bytes[i], bytes[i + 1]));
+			}
+			return words.ToArray();
+		}
+
+		/// <param name="fullFilename"></param>
+		/// <param name="expectedExtension">Include the dot</param>
+		internal static void ValidateFilename(string fullFilename, string expectedExtension)
 		{
 			if(!File.Exists(fullFilename))
 			{
@@ -25,19 +37,10 @@ namespace WithoutHaste.Drawing.Colors
 			}
 
 			string extension = Path.GetExtension(fullFilename);
-			if(extension != ".aco")
+			if(extension != expectedExtension)
 			{
-				throw new ExtensionNotSupportedException("File does not have .aco extension.", extension, ".aco");
+				throw new ExtensionNotSupportedException("File does not have "+expectedExtension+" extension.", extension, expectedExtension);
 			}
-
-			byte[] fileBytes = File.ReadAllBytes(fullFilename);
-			FormatACO aco = new FormatACO(fileBytes);
-			return aco.ColorPalette;
-		}
-
-		public static void SaveACO(string fullFilename, ColorPalette palette)
-		{
-			throw new NotImplementedException("Todo: save .aco file format.");
 		}
 	}
 }

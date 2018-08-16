@@ -16,7 +16,7 @@ namespace ColorsTest
 			//arrange
 			string filename = "not a filename.aco";
 			//act
-			API.LoadACO(filename);
+			FormatACO.Load(filename);
 			//assert exception
 		}
 
@@ -27,7 +27,7 @@ namespace ColorsTest
 			//arrange
 			string filename = "../../TestACO.cs";
 			//act
-			API.LoadACO(filename);
+			FormatACO.Load(filename);
 			//assert exception
 		}
 
@@ -37,7 +37,7 @@ namespace ColorsTest
 			//arrange
 			string filename = "../../../testData/Bright-colors.aco";
 			//act
-			ColorPalette palette = API.LoadACO(filename);
+			ColorPalette palette = FormatACO.Load(filename);
 			//assert
 			Assert.AreEqual(252, palette.Colors.Length);
 		}
@@ -48,7 +48,7 @@ namespace ColorsTest
 			//arrange
 			string filename = "../../../testData/Bright-colors.aco";
 			//act
-			ColorPalette palette = API.LoadACO(filename);
+			ColorPalette palette = FormatACO.Load(filename);
 			//assert
 			Assert.AreEqual(252, palette.Colors.Length);
 		}

@@ -6,7 +6,7 @@ using WithoutHaste.Drawing.Colors;
 namespace ColorsTest
 {
 	[TestClass]
-	public class TestUtilities
+	public class TestConvert
 	{
 		[TestMethod]
 		public void ColorFromHSV_ColorLibrary()
@@ -16,7 +16,7 @@ namespace ColorsTest
 				//arrange
 				TestColor testColor = ColorLibrary.Library[name];
 				//act
-				Color result = Utilities.ColorFromHSV(testColor.HSV);
+				Color result = ConvertColors.ColorFromHSV(testColor.HSV);
 				//assert
 				Assert.AreEqual(testColor.Color.R, result.R);
 				Assert.AreEqual(testColor.Color.G, result.G);
@@ -32,7 +32,7 @@ namespace ColorsTest
 				//arrange
 				TestColor testColor = ColorLibrary.Library[name];
 				//act
-				HSV result = Utilities.HSVFromColor(testColor.Color);
+				HSV result = ConvertColors.HSVFromColor(testColor.Color);
 				//assert
 				Assert.AreEqual(testColor.HSV.Hue, result.Hue);
 				Assert.AreEqual(testColor.HSV.Saturation, result.Saturation);
