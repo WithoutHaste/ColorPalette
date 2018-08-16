@@ -1,10 +1,10 @@
-# WithoutHaste.Drawing.ColorPalette
+# WithoutHaste.Drawing.Colors
 
 C# library for loading and saving standard color palette formats. Colors are passed as System.Drawing.Color.
 
 ## Download
 
-Library file located at ColorPalette/bin/Release/WithoutHaste.Drawing.ColorPalette.dll
+Library file located at Colors/bin/Release/WithoutHaste.Drawing.Colors.dll
 
 ## Requirements
 
