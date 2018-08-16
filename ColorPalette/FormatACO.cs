@@ -61,10 +61,10 @@ namespace WithoutHaste.Drawing.ColorPalette
 					case 0: ConvertColorSpace0(w, x, y); break;
 					case 1: ConvertColorSpace1(w, x, y); break;
 					case 2: ConvertColorSpace2(w, x, y, z); break;
-					case 7: throw new NotImplementedException(ErrorMessages.ACOFormatColorSpace7NotSupported);
-					case 8: throw new NotImplementedException(ErrorMessages.ACOFormatColorSpace8NotSupported);
-					case 9: throw new NotImplementedException(ErrorMessages.ACOFormatColorSpace9NotSupported);
-					default: throw new Exception(ErrorMessages.ACOFormatColorSpaceUnknown, new Exception("Unknown color space: " + colorSpace));
+					case 7: throw new NotImplementedException("Todo: convert color space 7 in .aco format.");
+					case 8: throw new NotImplementedException("Todo: convert color space 8 in .aco format.");
+					case 9: throw new NotImplementedException("Todo: convert color space 9 in .aco format.");
+					default: throw new ACOColorSpaceException("Unknown color space in .aco format.", colorSpace);
 				}
 				index += 5;
 			}
@@ -91,10 +91,10 @@ namespace WithoutHaste.Drawing.ColorPalette
 					case 0: ConvertColorSpace0(w, x, y); break;
 					case 1: ConvertColorSpace1(w, x, y); break;
 					case 2: ConvertColorSpace2(w, x, y, z); break;
-					case 7: throw new NotImplementedException(ErrorMessages.ACOFormatColorSpace7NotSupported);
-					case 8: throw new NotImplementedException(ErrorMessages.ACOFormatColorSpace8NotSupported);
-					case 9: throw new NotImplementedException(ErrorMessages.ACOFormatColorSpace9NotSupported);
-					default: throw new Exception(ErrorMessages.ACOFormatColorSpaceUnknown, new Exception("Unknown color space: " + colorSpace));
+					case 7: throw new NotImplementedException("Todo: convert color space 7 in .aco format.");
+					case 8: throw new NotImplementedException("Todo: convert color space 8 in .aco format.");
+					case 9: throw new NotImplementedException("Todo: convert color space 9 in .aco format.");
+					default: throw new ACOColorSpaceException("Unknown color space in .aco format.", colorSpace);
 				}
 				index += 5;
 				index++; //skip zero

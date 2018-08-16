@@ -21,12 +21,13 @@ namespace WithoutHaste.Drawing.ColorPalette
 		{
 			if(!File.Exists(fullFilename))
 			{
-				throw new ArgumentException(ErrorMessages.FileNotFound);
+				throw new FileNotFoundException("File not found.", fullFilename);
 			}
 
-			if(Path.GetExtension(fullFilename) != ".aco")
+			string extension = Path.GetExtension(fullFilename);
+			if(extension != ".aco")
 			{
-				throw new ArgumentException(ErrorMessages.FileWrongExtensionACO);
+				throw new ExtensionNotSupportedException("File does not have .aco extension.", extension, ".aco");
 			}
 
 			byte[] fileBytes = File.ReadAllBytes(fullFilename);
@@ -36,6 +37,7 @@ namespace WithoutHaste.Drawing.ColorPalette
 
 		public static void SaveACO(string fullFilename, ColorPalette palette)
 		{
+			throw new NotImplementedException("Todo: save .aco file format.");
 		}
 	}
 }

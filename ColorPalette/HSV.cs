@@ -26,9 +26,9 @@ namespace WithoutHaste.Drawing.ColorPalette
 
 		public HSV(float hue, float saturation, float value)
 		{
-			if(hue < 0 || hue >= 360) throw new ArgumentException(ErrorMessages.HueOutOfRange, new Exception("Hue: "+hue));
-			if(saturation < 0 || saturation > 1) throw new ArgumentException(ErrorMessages.SaturationOutOfRange, new Exception("Saturation: " + saturation));
-			if(value < 0 || value > 1) throw new ArgumentException(ErrorMessages.ValueOutOfRange, new Exception("Value: " + value));
+			if(hue < 0 || hue >= 360) throw new OutOfRangeException<float>("Hue out of range.", "hue", 0, 360, RangeType.IE, hue);
+			if(saturation < 0 || saturation > 1) throw new OutOfRangeException<float>("Saturation out of range.", "saturation", 0, 1, RangeType.II, saturation);
+			if(value < 0 || value > 1) throw new OutOfRangeException<float>("Value out of range.", "value", 0, 1, RangeType.II, value);
 
 			Hue = hue;
 			Saturation = saturation;

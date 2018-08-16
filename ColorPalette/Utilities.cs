@@ -26,15 +26,10 @@ namespace WithoutHaste.Drawing.ColorPalette
 		/// <param name="blue">Range [0, 255]</param>
 		public static Color ColorFromRGB(int red, int green, int blue)
 		{
-			if(red < 0 || red > 255) throw new ArgumentException(ErrorMessages.RedOutOfRange, new Exception("Red: " + red));
-			if(green < 0 || green > 255) throw new ArgumentException(ErrorMessages.GreenOutOfRange, new Exception("Green: " + green));
-			if(blue < 0 || blue > 255) throw new ArgumentException(ErrorMessages.BlueOutOfRange, new Exception("Blue: " + blue));
+			if(red < 0 || red > 255) throw new OutOfRangeException<int>("Red out of range.", "red", 0, 255, RangeType.II, red);
+			if(green < 0 || green > 255) throw new OutOfRangeException<int>("Green out of range.", "green", 0, 255, RangeType.II, green);
+			if(blue < 0 || blue > 255) throw new OutOfRangeException<int>("Blue out of range.", "blue", 0, 255, RangeType.II, blue);
 			return Color.FromArgb(ALPHA_MAX, red, green, blue);
-		}
-
-		public static Color ColorFromHSV(HSV hsv)
-		{
-			return ColorFromHSV(hsv.Hue, hsv.Saturation, hsv.Value);
 		}
 
 		/// <param name="hue">Range [0, 360)</param>
@@ -42,37 +37,38 @@ namespace WithoutHaste.Drawing.ColorPalette
 		/// <param name="value">Range [0, 1]</param>
 		public static Color ColorFromHSV(float hue, float saturation, float value)
 		{
-			if(hue < 0 || hue >= 360) throw new ArgumentException(ErrorMessages.HueOutOfRange, new Exception("Hue: " + hue));
-			if(saturation < 0 || saturation > 1) throw new ArgumentException(ErrorMessages.SaturationOutOfRange, new Exception("Saturation: " + saturation));
-			if(value < 0 || value > 1) throw new ArgumentException(ErrorMessages.ValueOutOfRange, new Exception("Value: " + value));
+			return ColorFromHSV(new HSV(hue, saturation, value));
+		}
 
-			float c = value * saturation;
-			float x = c * (1 - Math.Abs((hue / 60) % 2 - 1));
-			float m = value - c;
+		public static Color ColorFromHSV(HSV hsv)
+		{
+			float c = hsv.Value * hsv.Saturation;
+			float x = c * (1 - Math.Abs((hsv.Hue / 60) % 2 - 1));
+			float m = hsv.Value - c;
 			float rPrime = 0;
 			float gPrime = 0;
 			float bPrime = 0;
-			if(hue < 60)
+			if(hsv.Hue < 60)
 			{
 				rPrime = c;
 				gPrime = x;
 			}
-			else if(hue < 120)
+			else if(hsv.Hue < 120)
 			{
 				rPrime = x;
 				gPrime = c;
 			}
-			else if(hue < 180)
+			else if(hsv.Hue < 180)
 			{
 				gPrime = c;
 				bPrime = x;
 			}
-			else if(hue < 240)
+			else if(hsv.Hue < 240)
 			{
 				gPrime = x;
 				bPrime = c;
 			}
-			else if(hue < 300)
+			else if(hsv.Hue < 300)
 			{
 				rPrime = x;
 				bPrime = c;
@@ -129,10 +125,10 @@ namespace WithoutHaste.Drawing.ColorPalette
 		/// <param name="black">Range [0, 1]</param>
 		public static Color ColorFromCMYK(float cyan, float magenta, float yellow, float black)
 		{
-			if(cyan < 0 || cyan > 1) throw new ArgumentException(ErrorMessages.CyanOutOfRange, new Exception("Cyan: " + cyan));
-			if(magenta < 0 || magenta > 1) throw new ArgumentException(ErrorMessages.MagentaOutOfRange, new Exception("Magenta: " + magenta));
-			if(yellow < 0 || yellow > 1) throw new ArgumentException(ErrorMessages.YellowOutOfRange, new Exception("Yellow: " + yellow));
-			if(black < 0 || black > 1) throw new ArgumentException(ErrorMessages.BlackOutOfRange, new Exception("Black: " + black));
+			if(cyan < 0 || cyan > 1) throw new OutOfRangeException<float>("Cyan out of range.", "cyan", 0, 1, RangeType.II, cyan);
+			if(magenta < 0 || magenta > 1) throw new OutOfRangeException<float>("Magenta out of range.", "magenta", 0, 1, RangeType.II, magenta);
+			if(yellow < 0 || yellow > 1) throw new OutOfRangeException<float>("Yellow out of range.", "yellow", 0, 1, RangeType.II, yellow);
+			if(black < 0 || black > 1) throw new OutOfRangeException<float>("Black out of range.", "black", 0, 1, RangeType.II, black);
 			int red = (int)(255 * (1 - cyan) * (1 - black));
 			int green = (int)(255 * (1 - magenta) * (1 - black));
 			int blue = (int)(255 * (1 - yellow) * (1 - black));

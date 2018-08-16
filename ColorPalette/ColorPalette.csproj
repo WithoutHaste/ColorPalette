@@ -43,7 +43,11 @@
   <ItemGroup>
     <Compile Include="ColorPalette.cs" />
     <Compile Include="API.cs" />
-    <Compile Include="ErrorMessages.cs" />
+    <Compile Include="exceptions\ACOColorSpaceException.cs" />
+    <Compile Include="exceptions\ACOFormatException.cs" />
+    <Compile Include="exceptions\ExtensionNotSupportedException.cs" />
+    <Compile Include="exceptions\FileFormatException.cs" />
+    <Compile Include="exceptions\OutOfRangeException.cs" />
     <Compile Include="FormatACO.cs" />
     <Compile Include="HSV.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using WithoutHaste.Drawing.ColorPalette;
 
@@ -9,40 +10,24 @@ namespace ColorPaletteTest
 	public class TestACO
 	{
 		[TestMethod]
-		[ExpectedException(typeof(ArgumentException))]
-		public void LoadACO_FileDoesNotExist_Exception()
+		[ExpectedException(typeof(FileNotFoundException))]
+		public void LoadACO_FileDoesNotExist_FileNotFoundException()
 		{
 			//arrange
 			string filename = "not a filename.aco";
 			//act
-			try
-			{
-				API.LoadACO(filename);
-			}
-			catch(ArgumentException exception)
-			{
-				Assert.AreEqual(ErrorMessages.FileNotFound, exception.Message);
-				throw exception;
-			}
+			API.LoadACO(filename);
 			//assert exception
 		}
 
 		[TestMethod]
-		[ExpectedException(typeof(ArgumentException))]
-		public void LoadACO_FileWrongExtension_Exception()
+		[ExpectedException(typeof(ExtensionNotSupportedException))]
+		public void LoadACO_FileWrongExtension_ExtensionNotSupportedException()
 		{
 			//arrange
 			string filename = "../../TestACO.cs";
 			//act
-			try
-			{
-				API.LoadACO(filename);
-			}
-			catch(ArgumentException exception)
-			{
-				Assert.AreEqual(ErrorMessages.FileWrongExtensionACO, exception.Message);
-				throw exception;
-			}
+			API.LoadACO(filename);
 			//assert exception
 		}
 
