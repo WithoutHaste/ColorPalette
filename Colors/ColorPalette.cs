@@ -26,14 +26,31 @@ namespace WithoutHaste.Drawing.Colors
 		{
 		}
 
-		public void Add(Color color)
+		/// <summary>
+		/// Add color to end of list.
+		/// </summary>
+		/// <returns>Index of added color.</returns>
+		public int Add(Color color)
 		{
 			colors.Add(color);
+			return colors.Count - 1;
+		}
+
+		public void Insert(Color color, int index)
+		{
+			colors.Insert(index, color);
 		}
 
 		public void Remove(Color color)
 		{
 			colors.Remove(color);
+		}
+
+		public void RemoveAt(int index)
+		{
+			if(index < 0 || index >= colors.Count)
+				throw new IndexOutOfRangeException("Index out of range in color palette.");
+			colors.RemoveAt(index);
 		}
 
 		public void Replace(Color oldColor, Color newColor)
@@ -46,5 +63,12 @@ namespace WithoutHaste.Drawing.Colors
 				}
 			}
 		}
-    }
+
+		public void ReplaceAt(int index, Color newColor)
+		{
+			if(index < 0 || index >= colors.Count)
+				throw new IndexOutOfRangeException("Index out of range in color palette.");
+			colors[index] = newColor;
+		}
+	}
 }

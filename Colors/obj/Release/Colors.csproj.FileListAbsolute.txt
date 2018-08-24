@@ -2,3 +2,4 @@ E:\GitHub\WithoutHaste.Drawing.Colors\Colors\bin\Release\WithoutHaste.Drawing.Co
 E:\GitHub\WithoutHaste.Drawing.Colors\Colors\bin\Release\WithoutHaste.Drawing.Colors.pdb
 E:\GitHub\WithoutHaste.Drawing.Colors\Colors\obj\Release\WithoutHaste.Drawing.Colors.dll
 E:\GitHub\WithoutHaste.Drawing.Colors\Colors\obj\Release\WithoutHaste.Drawing.Colors.pdb
+E:\GitHub\WithoutHaste.Drawing.Colors\Colors\obj\Release\Colors.csprojResolveAssemblyReference.cache
