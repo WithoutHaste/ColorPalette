@@ -16,6 +16,12 @@ namespace WithoutHaste.Drawing.Colors
 			}
 		}
 
+		public int Count {
+			get {
+				return colors.Count;
+			}
+		}
+
 		public ColorPalette()
 		{
 		}

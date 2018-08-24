@@ -31,5 +31,11 @@ namespace WithoutHaste.Drawing.Colors
 		{
 			return BitConverter.ToUInt32(new byte[] { First, Second, 0, 0 }, 0);
 		}
+
+		public static Word FromInt(int i)
+		{
+			byte[] bytes = BitConverter.GetBytes(i);
+			return new Word(bytes[0], bytes[1]);
+		}
 	}
 }

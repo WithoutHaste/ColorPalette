@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -50,9 +51,13 @@ namespace WithoutHaste.Drawing.Colors
 			return aco.ColorPalette;
 		}
 
+		/// <summary>
+		/// Save color palette in Version 1 .aco format
+		/// </summary>
 		public static void Save(string fullFilename, ColorPalette palette)
 		{
-			throw new NotImplementedException("Todo: save .aco file format.");
+			byte[] fileBytes = SaveVersion1(palette);
+			File.WriteAllBytes(fullFilename, fileBytes);
 		}
 
 		/// <summary>
@@ -118,6 +123,22 @@ namespace WithoutHaste.Drawing.Colors
 				index++; //skip zero
 			}
 			return index;
+		}
+
+		private static byte[] SaveVersion1(ColorPalette colorPalette)
+		{
+			List<Word> words = new List<Word>();
+			words.Add(Word.FromInt(1)); //version
+			words.Add(Word.FromInt(colorPalette.Count)); //color count
+			foreach(Color color in colorPalette.Colors)
+			{
+				words.Add(Word.FromInt(0)); //color space
+				words.Add(Word.FromInt(color.R * 256)); //red in Apple's RGBColor data structure
+				words.Add(Word.FromInt(color.G * 256)); //green in Apple's RGBColor data structure
+				words.Add(Word.FromInt(color.B * 256)); //blue in Apple's RGBColor data structure
+				words.Add(Word.FromInt(0)); //filler
+			}
+			return IO.BreakIntoBytes(words.Select(word => word.ConvertBetweenBigEndianAndLittleEndian()).ToArray());
 		}
 
 		private void ConvertColorSpace0(int w, int x, int y)

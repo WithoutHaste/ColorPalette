@@ -27,6 +27,17 @@ namespace WithoutHaste.Drawing.Colors
 			return words.ToArray();
 		}
 
+		internal static byte[] BreakIntoBytes(Word[] words)
+		{
+			List<byte> bytes = new List<byte>();
+			foreach(Word word in words)
+			{
+				bytes.Add(word.First);
+				bytes.Add(word.Second);
+			}
+			return bytes.ToArray();
+		}
+
 		/// <param name="fullFilename"></param>
 		/// <param name="expectedExtension">Include the dot</param>
 		internal static void ValidateFilename(string fullFilename, string expectedExtension)
@@ -37,7 +48,7 @@ namespace WithoutHaste.Drawing.Colors
 			}
 
 			string extension = Path.GetExtension(fullFilename);
-			if(extension != expectedExtension)
+			if(extension.ToLower() != expectedExtension.ToLower())
 			{
 				throw new ExtensionNotSupportedException("File does not have "+expectedExtension+" extension.", extension, expectedExtension);
 			}
