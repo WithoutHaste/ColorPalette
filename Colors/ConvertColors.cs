@@ -92,7 +92,7 @@ namespace WithoutHaste.Drawing.Colors
 			}
 			else if(cMax == rPrime)
 			{
-				hue = 60 * PositiveMod((int)((gPrime - bPrime) / delta), 6);
+				hue = 60 * PositiveMod((gPrime - bPrime) / delta, 6);
 			}
 			else if(cMax == gPrime)
 			{
@@ -102,6 +102,7 @@ namespace WithoutHaste.Drawing.Colors
 			{
 				hue = 60 * (((rPrime - gPrime) / delta) + 4);
 			}
+			hue = (int)hue;
 			float saturation = (cMax == 0) ? 0 : (delta / cMax);
 			saturation = RoundTo2Decimals(saturation);
 			float value = cMax;
@@ -131,6 +132,19 @@ namespace WithoutHaste.Drawing.Colors
 			while(number < 0)
 			{
 				number += modulus;
+			}
+			return number;
+		}
+
+		internal static float PositiveMod(float number, int modulus)
+		{
+			while(number < 0)
+			{
+				number += modulus;
+			}
+			while(number >= modulus)
+			{
+				number -= modulus;
 			}
 			return number;
 		}

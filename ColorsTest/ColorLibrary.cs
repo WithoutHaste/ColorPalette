@@ -11,7 +11,7 @@ namespace ColorsTest
 	public static class ColorLibrary
 	{
 		public enum Name { Black, White, Red, Green, Blue, Yellow, Cyan, Magenta, Gray75, Gray50,
-		Red50, Yellow50, Green50, Magenta50, Cyan50, Blue50 };
+		Red50, Yellow50, Green50, Magenta50, Cyan50, Blue50, Orange };
 
 		public static readonly Dictionary<Name, TestColor> Library = new Dictionary<Name, TestColor>() {
 			{ Name.Black, new TestColor(Color.FromArgb(255, 0, 0, 0), new HSV(0, 0, 0)) },
@@ -30,6 +30,7 @@ namespace ColorsTest
 			{ Name.Magenta50, new TestColor(Color.FromArgb(255, 127, 0, 127), new HSV(300, 1, 0.50f)) },
 			{ Name.Cyan50, new TestColor(Color.FromArgb(255, 0, 127, 127), new HSV(180, 1, 0.50f)) },
 			{ Name.Blue50, new TestColor(Color.FromArgb(255, 0, 0, 127), new HSV(240, 1, 0.50f)) },
+			{ Name.Orange, new TestColor(Color.FromArgb(255, 255, 123, 0), new HSV(29, 1, 1)) },
 		};
 	}
 }
