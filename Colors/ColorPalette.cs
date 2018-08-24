@@ -29,5 +29,16 @@ namespace WithoutHaste.Drawing.Colors
 		{
 			colors.Remove(color);
 		}
+
+		public void Replace(Color oldColor, Color newColor)
+		{
+			for(int i = 0; i < colors.Count; i++)
+			{
+				if(colors[i] == oldColor)
+				{
+					colors[i] = newColor;
+				}
+			}
+		}
     }
 }
