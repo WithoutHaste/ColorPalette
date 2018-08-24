@@ -24,5 +24,10 @@ namespace WithoutHaste.Drawing.Colors
 		{
 			colors.Add(color);
 		}
+
+		public void Remove(Color color)
+		{
+			colors.Remove(color);
+		}
     }
 }
