@@ -11,7 +11,7 @@ namespace WithoutHaste.Drawing.Colors
 	/// <summary>
 	/// Photoshop *.aco color palette file format.
 	/// </summary>
-	public class FormatACO
+	public class FormatACO : IPaletteFormat
 	{
 //		private static Rounding PHOTOSHOP_ROUNDING = Rounding.Down;
 
