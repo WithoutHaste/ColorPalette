@@ -1,6 +1,6 @@
-Colors/.vs
+Colors/.vs/*
 Colors/bin/Debug/*
 Colors/obj/*
-ColorsTest/.vs
+ColorsTest/.vs/*
 ColorsTest/bin/*
 ColorsTest/obj/*
