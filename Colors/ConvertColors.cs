@@ -126,12 +126,28 @@ namespace WithoutHaste.Drawing.Colors
 			return ColorFromRGB(red, green, blue);
 		}
 
+		/// <returns>Format #RRGGBB</returns>
 		public static string HexadecimalFromColor(Color color)
 		{
 			string red = color.R.ToString("X2");
 			string green = color.G.ToString("X2");
 			string blue = color.B.ToString("X2");
 			return String.Format("#{0}{1}{2}", red, green, blue);
+		}
+
+		public static Color ColorFromHexadecimal(string hexadecimal)
+		{
+			if(hexadecimal.StartsWith("#"))
+			{
+				hexadecimal = hexadecimal.Substring(1);
+			}
+			if(hexadecimal.Length != 6)
+				throw new ArgumentException("Hexadecimal format expected: RRGGBB or #RRGGBB"); //todo specific exception
+
+			int red = Convert.ToInt32(hexadecimal.Substring(0, 2), 16);
+			int green = Convert.ToInt32(hexadecimal.Substring(2, 2), 16);
+			int blue = Convert.ToInt32(hexadecimal.Substring(4, 2), 16);
+			return Color.FromArgb(ALPHA_MAX, red, green, blue);
 		}
 
 		internal static int PositiveMod(int number, int modulus)

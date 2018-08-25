@@ -40,5 +40,35 @@ namespace ColorsTest
 			}
 		}
 
+		[TestMethod]
+		public void ColorFromHexadecimal_ColorLibrary()
+		{
+			foreach(ColorLibrary.Name name in ColorLibrary.Library.Keys)
+			{
+				//arrange
+				TestColor testColor = ColorLibrary.Library[name];
+				//act
+				Color result = ConvertColors.ColorFromHexadecimal(testColor.Hexadecimal);
+				//assert
+				Assert.AreEqual(testColor.Color.R, result.R);
+				Assert.AreEqual(testColor.Color.G, result.G);
+				Assert.AreEqual(testColor.Color.B, result.B);
+			}
+		}
+
+		[TestMethod]
+		public void HexadecimalFromColor_ColorLibrary()
+		{
+			foreach(ColorLibrary.Name name in ColorLibrary.Library.Keys)
+			{
+				//arrange
+				TestColor testColor = ColorLibrary.Library[name];
+				//act
+				string result = ConvertColors.HexadecimalFromColor(testColor.Color);
+				//assert
+				Assert.AreEqual(testColor.Hexadecimal, result);
+			}
+		}
+
 	}
 }

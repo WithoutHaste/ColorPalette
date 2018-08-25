@@ -12,11 +12,13 @@ namespace ColorsTest
 	{
 		public Color Color;
 		public HSV HSV;
+		public string Hexadecimal;
 
-		public TestColor(Color color, HSV hsv)
+		public TestColor(Color color, HSV hsv, string hexadecimal)
 		{
 			Color = color;
 			HSV = hsv;
+			Hexadecimal = hexadecimal;
 		}
 	}
 }
