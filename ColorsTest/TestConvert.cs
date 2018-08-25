@@ -70,5 +70,21 @@ namespace ColorsTest
 			}
 		}
 
+		[TestMethod]
+		public void TryParseRGB_255_255_25()
+		{
+			//arrange
+			int red = 255;
+			int green = 255;
+			int blue = 25;
+			string text = String.Format("{0},{1},{2}", red, green, blue);
+			Color color = Color.Black;
+			//act
+			ConvertColors.TryParseRGB(text, out color);
+			//assert
+			Assert.AreEqual(red, color.R);
+			Assert.AreEqual(green, color.G);
+			Assert.AreEqual(blue, color.B);
+		}
 	}
 }

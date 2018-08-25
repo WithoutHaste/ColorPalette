@@ -150,6 +150,75 @@ namespace WithoutHaste.Drawing.Colors
 			return Color.FromArgb(ALPHA_MAX, red, green, blue);
 		}
 
+		/// <summary>
+		/// Supported formats:
+		///		#RRGGBB
+		///		RRGGBB
+		///	Returns true if parse is successful.
+		public static bool TryParseHexadecimal(string text, out Color color)
+		{
+			try
+			{
+				color = ColorFromHexadecimal(text);
+				return true;
+			}
+			catch(Exception)
+			{
+				color = System.Drawing.Color.Black;
+				return false;
+			}
+		}
+
+		/// <summary>
+		/// Supported formats:
+		///		rgb(R,G,B)
+		///		(R,G,B)
+		///		R,G,B
+		///	Returns true if parse is successful.
+		public static bool TryParseRGB(string text, out Color color)
+		{
+			try
+			{
+				text = text.ToLower();
+				if(text.StartsWith("rgb"))
+					text = text.Substring(3);
+				text = text.Replace("(", "").Replace(")", "").Replace(" ", "");
+				string[] fields = text.Split(',');
+				color = ColorFromRGB(Int32.Parse(fields[0]), Int32.Parse(fields[1]), Int32.Parse(fields[2]));
+				return true;
+			}
+			catch(Exception)
+			{
+				color = System.Drawing.Color.Black;
+				return false;
+			}
+		}
+
+		/// <summary>
+		/// Supported formats:
+		///		hsv(H,S,V)
+		///		(H,S,V)
+		///		H,S,V
+		///	Returns true if parse is successful.
+		public static bool TryParseHSV(string text, out Color color)
+		{
+			try
+			{
+				text = text.ToLower();
+				if(text.StartsWith("rgb"))
+					text = text.Substring(3);
+				text = text.Replace("(", "").Replace(")", "").Replace(" ", "");
+				string[] fields = text.Split(',');
+				color = ColorFromHSV(Int32.Parse(fields[0]), Int32.Parse(fields[1]) / 100f, Int32.Parse(fields[2]) / 100f);
+				return true;
+			}
+			catch(Exception)
+			{
+				color = System.Drawing.Color.Black;
+				return false;
+			}
+		}
+
 		internal static int PositiveMod(int number, int modulus)
 		{
 			number = number % modulus;
