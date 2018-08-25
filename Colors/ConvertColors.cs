@@ -68,9 +68,9 @@ namespace WithoutHaste.Drawing.Colors
 				rPrime = c;
 				bPrime = x;
 			}
-			int red = (int)(255 * (rPrime + m));
-			int green = (int)(255 * (gPrime + m));
-			int blue = (int)(255 * (bPrime + m));
+			int red = (int)Math.Round((255 * (rPrime + m)), 0, MidpointRounding.AwayFromZero);
+			int green = (int)Math.Round((255 * (gPrime + m)), 0, MidpointRounding.AwayFromZero);
+			int blue = (int)Math.Round((255 * (bPrime + m)), 0, MidpointRounding.AwayFromZero);
 			return ColorFromRGB(red, green, blue);
 		}
 
@@ -205,11 +205,11 @@ namespace WithoutHaste.Drawing.Colors
 			try
 			{
 				text = text.ToLower();
-				if(text.StartsWith("rgb"))
+				if(text.StartsWith("hsv"))
 					text = text.Substring(3);
 				text = text.Replace("(", "").Replace(")", "").Replace(" ", "");
 				string[] fields = text.Split(',');
-				color = ColorFromHSV(Int32.Parse(fields[0]), Int32.Parse(fields[1]) / 100f, Int32.Parse(fields[2]) / 100f);
+				color = ColorFromHSV((float)Double.Parse(fields[0]), (float)Double.Parse(fields[1]), (float)Double.Parse(fields[2]));
 				return true;
 			}
 			catch(Exception)

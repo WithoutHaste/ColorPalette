@@ -1,8 +1,8 @@
-E:\GitHub\WithoutHaste.Drawing.Colors\ColorsTest\obj\Debug\ColorsTest.csprojResolveAssemblyReference.cache
 E:\GitHub\WithoutHaste.Drawing.Colors\ColorsTest\bin\Debug\ColorsTest.dll
 E:\GitHub\WithoutHaste.Drawing.Colors\ColorsTest\bin\Debug\ColorsTest.pdb
 E:\GitHub\WithoutHaste.Drawing.Colors\ColorsTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
 E:\GitHub\WithoutHaste.Drawing.Colors\ColorsTest\bin\Debug\WithoutHaste.Drawing.Colors.dll
 E:\GitHub\WithoutHaste.Drawing.Colors\ColorsTest\bin\Debug\WithoutHaste.Drawing.Colors.pdb
+E:\GitHub\WithoutHaste.Drawing.Colors\ColorsTest\obj\Debug\ColorsTest.csprojResolveAssemblyReference.cache
 E:\GitHub\WithoutHaste.Drawing.Colors\ColorsTest\obj\Debug\ColorsTest.dll
 E:\GitHub\WithoutHaste.Drawing.Colors\ColorsTest\obj\Debug\ColorsTest.pdb

@@ -23,15 +23,14 @@ namespace ColorsTest
 			{ Name.Cyan, new TestColor(Color.FromArgb(255, 0, 255, 255), new HSV(180, 1, 1), "#00FFFF") },
 			{ Name.Magenta, new TestColor(Color.FromArgb(255, 255, 0, 255), new HSV(300, 1, 1), "#FF00FF") },
 			{ Name.Gray75, new TestColor(Color.FromArgb(255, 191, 191, 191), new HSV(0, 0, 0.75f), "#BFBFBF") },
-			{ Name.Gray50, new TestColor(Color.FromArgb(255, 127, 127, 127), new HSV(0, 0, 0.50f), "#7F7F7F") },
-			{ Name.Red50, new TestColor(Color.FromArgb(255, 127, 0, 0), new HSV(0, 1, 0.50f), "#7F0000") },
-			{ Name.Yellow50, new TestColor(Color.FromArgb(255, 127, 127, 0), new HSV(60, 1, 0.50f), "#7F7F00") },
-			{ Name.Green50, new TestColor(Color.FromArgb(255, 0, 127, 0), new HSV(120, 1, 0.50f), "#007F00") },
-			{ Name.Magenta50, new TestColor(Color.FromArgb(255, 127, 0, 127), new HSV(300, 1, 0.50f), "#7F007F") },
-			{ Name.Cyan50, new TestColor(Color.FromArgb(255, 0, 127, 127), new HSV(180, 1, 0.50f), "#007F7F") },
-			{ Name.Blue50, new TestColor(Color.FromArgb(255, 0, 0, 127), new HSV(240, 1, 0.50f), "#00007F") },
-			//todo not getting reliable hsv/rgb back and forth conversion on orange
-			{ Name.Orange, new TestColor(Color.FromArgb(255, 255, 123, 0), new HSV(28, 1, 1), "#FF7B00") },
+			{ Name.Gray50, new TestColor(Color.FromArgb(255, 128, 128, 128), new HSV(0, 0, 0.50f), "#808080") },
+			{ Name.Red50, new TestColor(Color.FromArgb(255, 128, 0, 0), new HSV(0, 1, 0.50f), "#800000") },
+			{ Name.Yellow50, new TestColor(Color.FromArgb(255, 128, 128, 0), new HSV(60, 1, 0.50f), "#808000") },
+			{ Name.Green50, new TestColor(Color.FromArgb(255, 0, 128, 0), new HSV(120, 1, 0.50f), "#008000") },
+			{ Name.Magenta50, new TestColor(Color.FromArgb(255, 128, 0, 128), new HSV(300, 1, 0.50f), "#800080") },
+			{ Name.Cyan50, new TestColor(Color.FromArgb(255, 0, 128, 128), new HSV(180, 1, 0.50f), "#008080") },
+			{ Name.Blue50, new TestColor(Color.FromArgb(255, 0, 0, 128), new HSV(240, 1, 0.50f), "#000080") },
+			{ Name.Orange, new TestColor(Color.FromArgb(255, 255, 119, 0), new HSV(28, 1, 1), "#FF7700") },
 		};
 	}
 }
