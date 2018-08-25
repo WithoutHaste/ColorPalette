@@ -126,6 +126,14 @@ namespace WithoutHaste.Drawing.Colors
 			return ColorFromRGB(red, green, blue);
 		}
 
+		public static string HexadecimalFromColor(Color color)
+		{
+			string red = color.R.ToString("X2");
+			string green = color.G.ToString("X2");
+			string blue = color.B.ToString("X2");
+			return String.Format("#{0}{1}{2}", red, green, blue);
+		}
+
 		internal static int PositiveMod(int number, int modulus)
 		{
 			number = number % modulus;
