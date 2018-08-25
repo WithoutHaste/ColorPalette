@@ -30,7 +30,7 @@ namespace ColorsTest
 			{ Name.Magenta50, new TestColor(Color.FromArgb(255, 127, 0, 127), new HSV(300, 1, 0.50f)) },
 			{ Name.Cyan50, new TestColor(Color.FromArgb(255, 0, 127, 127), new HSV(180, 1, 0.50f)) },
 			{ Name.Blue50, new TestColor(Color.FromArgb(255, 0, 0, 127), new HSV(240, 1, 0.50f)) },
-			{ Name.Orange, new TestColor(Color.FromArgb(255, 255, 123, 0), new HSV(29, 1, 1)) },
+			{ Name.Orange, new TestColor(Color.FromArgb(255, 255, 123, 0), new HSV(28, 1, 1)) },
 		};
 	}
 }

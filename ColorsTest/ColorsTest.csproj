@@ -58,6 +58,7 @@
     <Compile Include="TestACO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestColor.cs" />
+    <Compile Include="TestGPL.cs" />
     <Compile Include="TestIO.cs" />
     <Compile Include="TestConvert.cs" />
   </ItemGroup>

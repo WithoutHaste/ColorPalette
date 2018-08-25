@@ -36,6 +36,8 @@ namespace WithoutHaste.Drawing.Colors
 			{
 				case ".aco":
 					return FormatACO.Load(fullFilename);
+				case ".gpl":
+					return FormatGPL.Load(fullFilename);
 				case ".pal":
 					return FormatPAL.Load(fullFilename);
 				default:
@@ -52,6 +54,9 @@ namespace WithoutHaste.Drawing.Colors
 			{
 				case ".aco":
 					FormatACO.Save(fullFilename, this);
+					break;
+				case ".gpl":
+					FormatGPL.Save(fullFilename, this);
 					break;
 				case ".pal":
 					FormatPAL.Save(fullFilename, this);

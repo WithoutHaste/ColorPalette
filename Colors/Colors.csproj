@@ -48,6 +48,7 @@
     <Compile Include="exceptions\FileFormatException.cs" />
     <Compile Include="exceptions\OutOfRangeException.cs" />
     <Compile Include="FormatACO.cs" />
+    <Compile Include="FormatGPL.cs" />
     <Compile Include="FormatPAL.cs" />
     <Compile Include="HSV.cs" />
     <Compile Include="IPaletteFormat.cs" />
