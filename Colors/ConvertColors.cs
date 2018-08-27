@@ -14,7 +14,7 @@ namespace WithoutHaste.Drawing.Colors
 		/// <param name="red">Range [0, 255]</param>
 		/// <param name="green">Range [0, 255]</param>
 		/// <param name="blue">Range [0, 255]</param>
-		public static Color ColorFromRGB(int red, int green, int blue)
+		public static Color RGBToColor(int red, int green, int blue)
 		{
 			if(red < 0 || red > 255) throw new OutOfRangeException<int>("Red out of range.", "red", 0, 255, RangeType.II, red);
 			if(green < 0 || green > 255) throw new OutOfRangeException<int>("Green out of range.", "green", 0, 255, RangeType.II, green);
@@ -25,12 +25,12 @@ namespace WithoutHaste.Drawing.Colors
 		/// <param name="hue">Range [0, 360)</param>
 		/// <param name="saturation">Range [0, 1]</param>
 		/// <param name="value">Range [0, 1]</param>
-		public static Color ColorFromHSV(float hue, float saturation, float value)
+		public static Color HSVToColor(float hue, float saturation, float value)
 		{
-			return ColorFromHSV(new HSV(hue, saturation, value));
+			return ToColor(new HSV(hue, saturation, value));
 		}
 
-		public static Color ColorFromHSV(HSV hsv)
+		public static Color ToColor(HSV hsv)
 		{
 			float c = hsv.Value * hsv.Saturation;
 			float x = c * (1 - Math.Abs((hsv.Hue / 60) % 2 - 1));
@@ -71,13 +71,13 @@ namespace WithoutHaste.Drawing.Colors
 			int red = (int)Math.Round((255 * (rPrime + m)), 0, MidpointRounding.AwayFromZero);
 			int green = (int)Math.Round((255 * (gPrime + m)), 0, MidpointRounding.AwayFromZero);
 			int blue = (int)Math.Round((255 * (bPrime + m)), 0, MidpointRounding.AwayFromZero);
-			return ColorFromRGB(red, green, blue);
+			return RGBToColor(red, green, blue);
 		}
 
 		/// <summary>
 		/// Converts RGB to HSV, ignoring Alpha
 		/// </summary>
-		public static HSV HSVFromColor(Color color)
+		public static HSV ToHSV(Color color)
 		{
 			float rPrime = color.R / 255f;
 			float gPrime = color.G / 255f;
@@ -114,7 +114,7 @@ namespace WithoutHaste.Drawing.Colors
 		/// <param name="magenta">Range [0, 1]</param>
 		/// <param name="yellow">Range [0, 1]</param>
 		/// <param name="black">Range [0, 1]</param>
-		public static Color ColorFromCMYK(float cyan, float magenta, float yellow, float black)
+		public static Color CMYKToColor(float cyan, float magenta, float yellow, float black)
 		{
 			if(cyan < 0 || cyan > 1) throw new OutOfRangeException<float>("Cyan out of range.", "cyan", 0, 1, RangeType.II, cyan);
 			if(magenta < 0 || magenta > 1) throw new OutOfRangeException<float>("Magenta out of range.", "magenta", 0, 1, RangeType.II, magenta);
@@ -123,11 +123,11 @@ namespace WithoutHaste.Drawing.Colors
 			int red = (int)(255 * (1 - cyan) * (1 - black));
 			int green = (int)(255 * (1 - magenta) * (1 - black));
 			int blue = (int)(255 * (1 - yellow) * (1 - black));
-			return ColorFromRGB(red, green, blue);
+			return RGBToColor(red, green, blue);
 		}
 
 		/// <returns>Format #RRGGBB</returns>
-		public static string HexadecimalFromColor(Color color)
+		public static string ToHexadecimal(Color color)
 		{
 			string red = color.R.ToString("X2");
 			string green = color.G.ToString("X2");
@@ -135,7 +135,7 @@ namespace WithoutHaste.Drawing.Colors
 			return String.Format("#{0}{1}{2}", red, green, blue);
 		}
 
-		public static Color ColorFromHexadecimal(string hexadecimal)
+		public static Color HexadecimalToColor(string hexadecimal)
 		{
 			if(hexadecimal.StartsWith("#"))
 			{
@@ -159,7 +159,7 @@ namespace WithoutHaste.Drawing.Colors
 		{
 			try
 			{
-				color = ColorFromHexadecimal(text);
+				color = HexadecimalToColor(text);
 				return true;
 			}
 			catch(Exception)
@@ -184,7 +184,7 @@ namespace WithoutHaste.Drawing.Colors
 					text = text.Substring(3);
 				text = text.Replace("(", "").Replace(")", "").Replace(" ", "");
 				string[] fields = text.Split(',');
-				color = ColorFromRGB(Int32.Parse(fields[0]), Int32.Parse(fields[1]), Int32.Parse(fields[2]));
+				color = RGBToColor(Int32.Parse(fields[0]), Int32.Parse(fields[1]), Int32.Parse(fields[2]));
 				return true;
 			}
 			catch(Exception)
@@ -209,7 +209,7 @@ namespace WithoutHaste.Drawing.Colors
 					text = text.Substring(3);
 				text = text.Replace("(", "").Replace(")", "").Replace(" ", "");
 				string[] fields = text.Split(',');
-				color = ColorFromHSV((float)Double.Parse(fields[0]), (float)Double.Parse(fields[1]), (float)Double.Parse(fields[2]));
+				color = HSVToColor((float)Double.Parse(fields[0]), (float)Double.Parse(fields[1]), (float)Double.Parse(fields[2]));
 				return true;
 			}
 			catch(Exception)

@@ -77,7 +77,7 @@ namespace WithoutHaste.Drawing.Colors
 					continue; //just skip badly formatted lines
 				if(!Int32.TryParse(fields[2].Trim(), out blue))
 					continue; //just skip badly formatted lines
-				colorPalette.Add(ConvertColors.ColorFromRGB(red, green, blue));
+				colorPalette.Add(ConvertColors.RGBToColor(red, green, blue));
 			}
 		}
 
