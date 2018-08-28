@@ -135,6 +135,7 @@ namespace WithoutHaste.Drawing.Colors
 			return String.Format("#{0}{1}{2}", red, green, blue);
 		}
 
+		/// <param name="hexadecimal">Format #RRGGBB or RRGGBB</param>
 		public static Color HexadecimalToColor(string hexadecimal)
 		{
 			if(hexadecimal.StartsWith("#"))
@@ -154,7 +155,8 @@ namespace WithoutHaste.Drawing.Colors
 		/// Supported formats:
 		///		#RRGGBB
 		///		RRGGBB
-		///	Returns true if parse is successful.
+		///	</summary>
+		///	<returns>True, if parse is successful</returns>
 		public static bool TryParseHexadecimal(string text, out Color color)
 		{
 			try
@@ -174,7 +176,8 @@ namespace WithoutHaste.Drawing.Colors
 		///		rgb(R,G,B)
 		///		(R,G,B)
 		///		R,G,B
-		///	Returns true if parse is successful.
+		///	</summary>
+		///	<returns>True, if parse is successful</returns>
 		public static bool TryParseRGB(string text, out Color color)
 		{
 			try
@@ -199,7 +202,8 @@ namespace WithoutHaste.Drawing.Colors
 		///		hsv(H,S,V)
 		///		(H,S,V)
 		///		H,S,V
-		///	Returns true if parse is successful.
+		///	</summary>
+		///	<returns>True, if parse is successful</returns>
 		public static bool TryParseHSV(string text, out Color color)
 		{
 			try
