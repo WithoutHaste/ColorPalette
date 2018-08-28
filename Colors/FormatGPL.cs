@@ -19,17 +19,11 @@ namespace WithoutHaste.Drawing.Colors
 		public string Header { get; protected set; }
 		public string Name { get; protected set; }
 
-		public FormatGPL(string[] fileLines)
+		public FormatGPL(string fullFilename)
 		{
-			if(fileLines.Length <= 3)
-				return;
-
-			fileLines = RemoveComments(fileLines);
-
 			colorPalette = new ColorPalette();
-			Header = fileLines[0]; //GIMP Palette
-			Name = fileLines[1]; //Name: name of palette
-			string columns = fileLines[2];
+			IO.ValidateFilename(fullFilename, ".gpl");
+			string[] fileLines = File.ReadAllLines(fullFilename);
 			Load(fileLines);
 		}
 
@@ -40,9 +34,7 @@ namespace WithoutHaste.Drawing.Colors
 
 		public static ColorPalette Load(string fullFilename)
 		{
-			IO.ValidateFilename(fullFilename, ".gpl");
-			string[] lines = File.ReadAllLines(fullFilename);
-			FormatGPL gpl = new FormatGPL(lines);
+			FormatGPL gpl = new FormatGPL(fullFilename);
 			return gpl.ColorPalette;
 		}
 
@@ -51,13 +43,29 @@ namespace WithoutHaste.Drawing.Colors
 		/// </summary>
 		public static void Save(string fullFilename, ColorPalette palette)
 		{
-			string[] fileLines = Save(palette);
+			string[] fileLines = ConvertToFileLines(palette);
 			File.WriteAllLines(fullFilename, fileLines);
+		}
+
+		public void Save(string fullFilename)
+		{
+			Save(fullFilename, ColorPalette);
 		}
 
 		private void Load(string[] fileLines)
 		{
 			colorPalette.Clear();
+
+			if(fileLines.Length <= 3)
+				return;
+
+			fileLines = RemoveComments(fileLines);
+
+			colorPalette = new ColorPalette();
+			Header = fileLines[0]; //GIMP Palette
+			Name = fileLines[1]; //Name: name of palette
+			string columns = fileLines[2];
+
 			for(int i = 3; i < fileLines.Length; i++)
 			{
 				string line = fileLines[i].Replace('\t', ' ').Trim();
@@ -81,7 +89,7 @@ namespace WithoutHaste.Drawing.Colors
 			}
 		}
 
-		private static string[] Save(ColorPalette palette)
+		private static string[] ConvertToFileLines(ColorPalette palette)
 		{
 			List<string> fileLines = new List<string>();
 			fileLines.Add("GIMP Palette"); //header

@@ -22,12 +22,13 @@ namespace WithoutHaste.Drawing.Colors
 
 		public FormatACO(string fullFilename)
 		{
+			colorPalette = new ColorPalette();
 			IO.ValidateFilename(fullFilename, ".aco");
 			byte[] fileBytes = File.ReadAllBytes(fullFilename);
 			Load(fileBytes);
 		}
 
-		public void Load(byte[] bytes)
+		private void Load(byte[] bytes)
 		{
 			words = IO.BreakIntoWords(bytes).Select(word => word.ConvertBetweenBigEndianAndLittleEndian()).ToArray();
 			int version = words[0].ToInt();

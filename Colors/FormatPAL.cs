@@ -19,8 +19,12 @@ namespace WithoutHaste.Drawing.Colors
 		public string Header { get; protected set; }
 		public string Version { get; protected set; }
 
-		public FormatPAL(string[] fileLines)
+		public FormatPAL(string fullFilename)
 		{
+			colorPalette = new ColorPalette();
+			IO.ValidateFilename(fullFilename, ".pal");
+			string[] fileLines = File.ReadAllLines(fullFilename);
+
 			if(fileLines.Length <= 2)
 				return;
 
@@ -33,9 +37,7 @@ namespace WithoutHaste.Drawing.Colors
 
 		public static ColorPalette Load(string fullFilename)
 		{
-			IO.ValidateFilename(fullFilename, ".pal");
-			string[] lines = File.ReadAllLines(fullFilename);
-			FormatPAL pal = new FormatPAL(lines);
+			FormatPAL pal = new FormatPAL(fullFilename);
 			return pal.ColorPalette;
 		}
 
@@ -46,6 +48,11 @@ namespace WithoutHaste.Drawing.Colors
 		{
 			string[] fileLines = SaveVersion0100(palette);
 			File.WriteAllLines(fullFilename, fileLines);
+		}
+
+		public void Save(string fullFilename)
+		{
+			Save(fullFilename, ColorPalette);
 		}
 
 		private void LoadVersion0100(string[] fileLines)
