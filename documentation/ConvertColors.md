@@ -25,7 +25,7 @@ HSV: hue, saturation, value color space
 From Red/Green/Blue:  
 `ConvertColors.RGBToColor(red, green, blue);`
 
-From Red/Green/Blue:
+From Red/Green/Blue:  
 Formats: "rgb(red, green, blue)" or "(red, green, blue)" or "red, green, blue"  
 ```
 System.Drawing.Color color;
@@ -54,7 +54,7 @@ From Hexadecimal string:
 Formats: "#RRGGBB" or "RRGGBB"  
 `ConvertColors.HexadecimalToColor(hexadecimal);`
 
-From Hexadecimal string:
+From Hexadecimal string:  
 Formats: "#RRGGBB" or "RRGGBB"  
 ```
 System.Drawing.Color color;
