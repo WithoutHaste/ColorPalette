@@ -20,10 +20,10 @@ System.Drawing.dll
 
 Palettes can be loaded/saved through the individual `Format` objects (see below) or through the `ColorPalette` object. When using the `ColorPalette` object, the file format is determined by the extension on the `filename`.
 
-`
-ColorPalette palette = ColorPalette.Load(filename);\
+```
+ColorPalette palette = ColorPalette.Load(filename);
 palette.Save(filename);
-`
+```
 
 `filename` means the full path with file extension.
 
@@ -35,10 +35,10 @@ Load from Version 1 and 2 with Color Space 0.
 
 Save to Version 1 with Color Space 0.
 
-`
+```
 ColorPalette palette = FormatACO.Load(filename);  
 FormatACO.Save(palette, filename);  
-`
+```
 
 [FormatACO object documentation](documentation/FormatACO.md)
 
@@ -46,10 +46,10 @@ FormatACO.Save(palette, filename);
 
 Load and save files.
 
-`
+```
 ColorPalette palette = FormatGPL.Load(filename);  
 FormatGPL.Save(palette, filename);  
-`
+```
 
 [FormatGPL object documentation](documentation/FormatGPL.md)
 
@@ -57,10 +57,10 @@ FormatGPL.Save(palette, filename);
 
 Load and save Version 0100 files.
 
-`
+```
 ColorPalette palette = FormatPAL.Load(filename);  
 FormatPAL.Save(palette, filename);  
-`
+```
 
 [FormatPAL object documentation](documentation/FormatPAL.md)
 
