@@ -21,7 +21,7 @@ System.Drawing.dll
 Palettes can be loaded/saved through the individual `Format` objects (see below) or through the `ColorPalette` object. When using the `ColorPalette` object, the file format is determined by the extension on the `filename`.
 
 `
-ColorPalette palette = ColorPalette.Load(filename);  
+ColorPalette palette = ColorPalette.Load(filename);\
 palette.Save(filename);
 `
 
