@@ -16,19 +16,21 @@ Loads a palette from file.
 
 Possible exceptions:  
 `FileNotFoundException`: file not found  
-`ExtensionNotSupportedException`: file extension for supported  
+`ExtensionNotSupportedException`: file extension not supported  
 
 ## Static Methods
 
 ### Load
 
-Loads a color palette from file and returns it.
+Load a color palette from file.
 
 `ColorPalette palette = FormatACO.Load(filename);`
 
+Returns the color palette.
+
 Possible exceptions:  
 `FileNotFoundException`: file not found  
-`ExtensionNotSupportedException`: file extension for supported  
+`ExtensionNotSupportedException`: file extension not supported  
 
 ### Save
 
