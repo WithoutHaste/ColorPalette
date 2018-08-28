@@ -78,6 +78,7 @@ namespace WithoutHaste.Drawing.Colors
 
 		public void Insert(Color color, int index)
 		{
+			//todo what if index is below zero or way too high
 			colors.Insert(index, color);
 		}
 
