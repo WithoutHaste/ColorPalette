@@ -4,9 +4,9 @@ An ordered list of colors.
 
 ## Properties
 
-Colors: list of System.Drawing.Color objects which make up the palette
+`Colors`: list of System.Drawing.Color objects which make up the palette
 
-Count: number of colors in the palette
+`Count`: number of colors in the palette
 
 ## Constructor
 

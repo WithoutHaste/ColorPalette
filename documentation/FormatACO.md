@@ -6,7 +6,7 @@ Photoshop *.aco color palette file format operations.
 
 ## Properties
 
-ColorPalette: the palette loaded from or saved to file.
+`ColorPalette`: the palette loaded from file, or to be saved to file.
 
 ## Constructor
 
@@ -14,9 +14,9 @@ Loads a palette from file.
 
 `new FormatACO(filename)`
 
-Possible exceptions:
-`FileNotFoundException`: file not found
-`ExtensionNotSupportedException`: file extension for supported
+Possible exceptions:  
+`FileNotFoundException`: file not found  
+`ExtensionNotSupportedException`: file extension for supported  
 
 ## Static Methods
 
@@ -26,9 +26,9 @@ Loads a color palette from file and returns it.
 
 `ColorPalette palette = FormatACO.Load(filename);`
 
-Possible exceptions:
-`FileNotFoundException`: file not found
-`ExtensionNotSupportedException`: file extension for supported
+Possible exceptions:  
+`FileNotFoundException`: file not found  
+`ExtensionNotSupportedException`: file extension for supported  
 
 ### Save
 
