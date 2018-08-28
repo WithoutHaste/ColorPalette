@@ -60,7 +60,7 @@ Insert a color into a position in the palette.
 
 ### Remove
 
-Remove the first instance of a color from the palette.
+Remove all instances of a color from the palette.
 
 `palette.Remove(color);`
 

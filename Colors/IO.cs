@@ -53,5 +53,10 @@ namespace WithoutHaste.Drawing.Colors
 				throw new ExtensionNotSupportedException("File does not have "+expectedExtension+" extension.", extension, expectedExtension);
 			}
 		}
+
+		internal static byte[] GetFileBytes(string fullFilename)
+		{
+			return File.ReadAllBytes(fullFilename);
+		}
 	}
 }

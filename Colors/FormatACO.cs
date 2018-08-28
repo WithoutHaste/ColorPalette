@@ -20,7 +20,14 @@ namespace WithoutHaste.Drawing.Colors
 
 		private Word[] words;
 
-		public FormatACO(byte[] bytes)
+		public FormatACO(string fullFilename)
+		{
+			IO.ValidateFilename(fullFilename, ".aco");
+			byte[] fileBytes = File.ReadAllBytes(fullFilename);
+			Load(fileBytes);
+		}
+
+		public void Load(byte[] bytes)
 		{
 			words = IO.BreakIntoWords(bytes).Select(word => word.ConvertBetweenBigEndianAndLittleEndian()).ToArray();
 			int version = words[0].ToInt();
@@ -40,14 +47,11 @@ namespace WithoutHaste.Drawing.Colors
 			{
 				index = LoadVersion2(colorCount, index);
 			}
-
 		}
 
 		public static ColorPalette Load(string fullFilename)
 		{
-			IO.ValidateFilename(fullFilename, ".aco");
-			byte[] fileBytes = File.ReadAllBytes(fullFilename);
-			FormatACO aco = new FormatACO(fileBytes);
+			FormatACO aco = new FormatACO(fullFilename);
 			return aco.ColorPalette;
 		}
 
@@ -58,6 +62,11 @@ namespace WithoutHaste.Drawing.Colors
 		{
 			byte[] fileBytes = SaveVersion1(palette);
 			File.WriteAllBytes(fullFilename, fileBytes);
+		}
+
+		public void Save(string fullFilename)
+		{
+			Save(fullFilename, ColorPalette);
 		}
 
 		/// <summary>

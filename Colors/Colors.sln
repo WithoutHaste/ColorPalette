@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Colors", "Colors.csproj", "{BB7AFD1F-6657-488F-9EC0-E2EBE204EBF7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColorsTest", "..\ColorsTest\ColorsTest.csproj", "{0DBD5714-7E36-435D-B938-C815C932F1E4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{BB7AFD1F-6657-488F-9EC0-E2EBE204EBF7} = {BB7AFD1F-6657-488F-9EC0-E2EBE204EBF7}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

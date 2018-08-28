@@ -84,7 +84,7 @@ namespace WithoutHaste.Drawing.Colors
 
 		public void Remove(Color color)
 		{
-			colors.Remove(color);
+			colors.RemoveAll((element => element == color));
 		}
 
 		public void RemoveAt(int index)

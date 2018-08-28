@@ -16,7 +16,7 @@ namespace ColorsTest
 				//arrange
 				TestColor testColor = ColorLibrary.Library[name];
 				//act
-				Color result = ConvertColors.ColorFromHSV(testColor.HSV);
+				Color result = ConvertColors.ToColor(testColor.HSV);
 				//assert
 				Assert.AreEqual(testColor.Color.R, result.R);
 				Assert.AreEqual(testColor.Color.G, result.G);
@@ -32,7 +32,7 @@ namespace ColorsTest
 				//arrange
 				TestColor testColor = ColorLibrary.Library[name];
 				//act
-				HSV result = ConvertColors.HSVFromColor(testColor.Color);
+				HSV result = ConvertColors.ToHSV(testColor.Color);
 				//assert
 				Assert.AreEqual(testColor.HSV.Hue, result.Hue);
 				Assert.AreEqual(testColor.HSV.Saturation, result.Saturation);
@@ -48,7 +48,7 @@ namespace ColorsTest
 				//arrange
 				TestColor testColor = ColorLibrary.Library[name];
 				//act
-				Color result = ConvertColors.ColorFromHexadecimal(testColor.Hexadecimal);
+				Color result = ConvertColors.HexadecimalToColor(testColor.Hexadecimal);
 				//assert
 				Assert.AreEqual(testColor.Color.R, result.R);
 				Assert.AreEqual(testColor.Color.G, result.G);
@@ -64,7 +64,7 @@ namespace ColorsTest
 				//arrange
 				TestColor testColor = ColorLibrary.Library[name];
 				//act
-				string result = ConvertColors.HexadecimalFromColor(testColor.Color);
+				string result = ConvertColors.ToHexadecimal(testColor.Color);
 				//assert
 				Assert.AreEqual(testColor.Hexadecimal, result);
 			}
