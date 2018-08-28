@@ -6,7 +6,7 @@ An ordered list of colors.
 
 Colors: list of System.Drawing.Color objects which make up the palette
 
-Count: number of colors in palette
+Count: number of colors in the palette
 
 ## Constructor
 
@@ -21,7 +21,7 @@ Load a color palette file. File format is determined by the extension of the `fi
 `ColorPalette palette = ColorPalette.Load(filename);`
 
 Possible exceptions:  
-NotImplementedException: file format is not yet supported
+`NotImplementedException`: file format is not yet supported
 
 [Full list of supported formats on main page.](../README.md)
 
@@ -34,7 +34,7 @@ Save a color palette to file. File format is determined by the extension of the 
 `palette.Save(filename);`
 
 Possible exceptions:  
-NotImplementedException: file format is not yet supported
+`NotImplementedException`: file format is not yet supported
 
 [Full list of supported formats on main page.](../README.md)
 
@@ -71,7 +71,7 @@ Remove a specified color from the palette, by the index position of the color.
 `palette.RemoveAt(index);`
 
 Possible exceptions:  
-IndexOutOfRangeException: index is not valid for palette length
+`IndexOutOfRangeException`: index is not valid for palette length
 
 ### Replace
 
@@ -86,4 +86,4 @@ Replace the color at a specified index position in the palette with a new color.
 `palette.Replace(index, newColor);`
 
 Possible exceptions:  
-IndexOutOfRangeException: index is not valid for palette length
+`IndexOutOfRangeException`: index is not valid for palette length
