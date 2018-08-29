@@ -70,6 +70,19 @@ All color space conversions are available in the static `ConvertColors` class.
 
 [ConvertColors object documentation](documentation/ConvertColors.md)
 
+## Related Projects
+
+Other C# libraries:  
+
+[WithoutHaste.Windows.GUI](https://github.com/WithoutHaste/WithoutHaste.Windows.GUI):  
+- Windows Forms layout helper
+- custom controls
+- icon manager
+- history data structure
+
+[WithoutHaste.Drawing.Shapes](https://github.com/WithoutHaste/WithoutHaste.Drawing.Shapes):  
+- shape/geometry calculations and operations
+
 ## Version Notes
 
 Version 1 in development.
