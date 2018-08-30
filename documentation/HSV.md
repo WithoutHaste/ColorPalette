@@ -24,9 +24,9 @@ Value range [0,1]
 
 ### HSV(System.Single hue, System.Single saturation, System.Single value)
 
-Parameter hue: range [0, 360)
-Parameter saturation: range [0, 1]
-Parameter value: range [0,1]
+Parameter hue: range [0, 360)  
+Parameter saturation: range [0, 1]  
+Parameter value: range [0,1]  
 
 ## Methods
 

@@ -18,7 +18,7 @@ Base Type: System.Object
 
 Load color palette from file.
 
-Parameter fullFilename: Path + filename + extension.
+Parameter fullFilename: Path + filename + extension.  
 
 ## Static Methods
 
@@ -26,13 +26,13 @@ Parameter fullFilename: Path + filename + extension.
 
 Load and return color palette from file.
 
-Parameter fullFilename: Path + filename + extension.
+Parameter fullFilename: Path + filename + extension.  
 
 ### Void Save(System.String fullFilename, ColorPalette palette)
 
 Save color palette in standard .gpl format
 
-Parameter fullFilename: Path + filename + extension.
+Parameter fullFilename: Path + filename + extension.  
 
 ## Methods
 
@@ -40,5 +40,5 @@ Parameter fullFilename: Path + filename + extension.
 
 Save color palette in standard .gpl format
 
-Parameter fullFilename: Path + filename + extension.
+Parameter fullFilename: Path + filename + extension.  
 

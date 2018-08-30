@@ -18,10 +18,10 @@ Base Type: System.Object
 
 Convert Cyan, Magenta, Yellow, Black to Color.
 
-Parameter cyan: Range [0, 1]
-Parameter magenta: Range [0, 1]
-Parameter yellow: Range [0, 1]
-Parameter black: Range [0, 1]
+Parameter cyan: Range [0, 1]  
+Parameter magenta: Range [0, 1]  
+Parameter yellow: Range [0, 1]  
+Parameter black: Range [0, 1]  
 
 OutOfRangeException`1: Cyan or Magenta or Yellow or Black value is out of range.
 
@@ -29,7 +29,7 @@ OutOfRangeException`1: Cyan or Magenta or Yellow or Black value is out of range.
 
 Converts Hexadecimal string to Color.
 
-Parameter hexadecimal: Format #RRGGBB or RRGGBB
+Parameter hexadecimal: Format #RRGGBB or RRGGBB  
 
 ArgumentException: Hexadecimal string is not in supported format.
 
@@ -37,9 +37,9 @@ ArgumentException: Hexadecimal string is not in supported format.
 
 Convert from Hue, Saturation, Value to Color.
 
-Parameter hue: Range [0, 360)
-Parameter saturation: Range [0, 1]
-Parameter value: Range [0, 1]
+Parameter hue: Range [0, 360)  
+Parameter saturation: Range [0, 1]  
+Parameter value: Range [0, 1]  
 
 OutOfRangeException`1: Hue or Saturation or Value value is out of range.
 
@@ -47,9 +47,9 @@ OutOfRangeException`1: Hue or Saturation or Value value is out of range.
 
 Convert from Red, Green, Blue to Color.
 
-Parameter red: Range [0, 255]
-Parameter green: Range [0, 255]
-Parameter blue: Range [0, 255]
+Parameter red: Range [0, 255]  
+Parameter green: Range [0, 255]  
+Parameter blue: Range [0, 255]  
 
 OutOfRangeException`1: Red or Green or Blue value is out of range.
 
