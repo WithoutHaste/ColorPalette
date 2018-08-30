@@ -57,7 +57,7 @@
             </summary>
         </member>
         <member name="T:WithoutHaste.Drawing.Colors.ACOColorSpaceException">
-            <summary>Error related to .aco file format, color space 0.</summary>
+            <summary>Error related to .aco file format, and a specific color space.</summary>
         </member>
         <member name="F:WithoutHaste.Drawing.Colors.ACOColorSpaceException.ColorSpace">
             <summary></summary>

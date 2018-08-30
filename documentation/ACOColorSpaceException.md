@@ -1,6 +1,6 @@
 # ACOColorSpaceException
 
-Error related to .aco file format, color space 0.
+Error related to .aco file format, and a specific color space.
 
 Base Type: [ACOFormatException](ACOFormatException.md)
 

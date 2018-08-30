@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WithoutHaste.Drawing.Colors
 {
-	/// <summary>Error related to .aco file format, color space 0.</summary>
+	/// <summary>Error related to .aco file format, and a specific color space.</summary>
 	public class ACOColorSpaceException : ACOFormatException
 	{
 		/// <summary></summary>

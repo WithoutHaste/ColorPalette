@@ -35,7 +35,7 @@ Defines whether minimum and maximum values are included in the range.
 ## Exceptions
 
 [ACOColorSpaceException](ACOColorSpaceException.md)  
-Error related to .aco file format, color space 0.
+Error related to .aco file format, and a specific color space.
 
 [ACOFormatException](ACOFormatException.md)  
 Error related to .aco file format.
