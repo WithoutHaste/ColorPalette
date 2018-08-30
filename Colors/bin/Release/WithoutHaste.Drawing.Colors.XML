@@ -1,0 +1,351 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WithoutHaste.Drawing.Colors</name>
+    </assembly>
+    <members>
+        <member name="T:WithoutHaste.Drawing.Colors.ColorPalette">
+            <summary>
+            An ordered list of colors.
+            </summary>
+        </member>
+        <member name="P:WithoutHaste.Drawing.Colors.ColorPalette.Colors">
+            <summary>Colors in palette.</summary>
+        </member>
+        <member name="P:WithoutHaste.Drawing.Colors.ColorPalette.Count">
+            <summary>Length of palette.</summary>
+        </member>
+        <member name="M:WithoutHaste.Drawing.Colors.ColorPalette.#ctor">
+            <summary></summary>
+        </member>
+        <member name="M:WithoutHaste.Drawing.Colors.ColorPalette.Load(System.String)">
+            <summary>
+            Load a color palette from file. Supported file formats: .aco, .gpl, .pal.
+            </summary>
+        </member>
+        <member name="M:WithoutHaste.Drawing.Colors.ColorPalette.Save(System.String)">
+            <summary>
+            Save a color palette to file. Supported file formats: .aco, .gpl, .pal.
+            </summary>
+        </member>
+        <member name="M:WithoutHaste.Drawing.Colors.ColorPalette.Add(System.Drawing.Color)">
+            <summary>
+            Add color to end of palette.
+            </summary>
+            <returns>Index of added color.</returns>
+        </member>
+        <member name="M:WithoutHaste.Drawing.Colors.ColorPalette.Insert(System.Drawing.Color,System.Int32)">
+            <summary>Insert color at a position in the palette.</summary>
+        </member>
+        <member name="M:WithoutHaste.Drawing.Colors.ColorPalette.Remove(System.Drawing.Color)">
+            <summary>Remove all instances of color from the palette.</summary>
+        </member>
+        <member name="M:WithoutHaste.Drawing.Colors.ColorPalette.RemoveAt(System.Int32)">
+            <summary>Remove the color at a specific position in the palette.</summary>
+            <exception cref="T:System.IndexOutOfRangeException">Index is too low or too high for palette.</exception>
+        </member>
+        <member name="M:WithoutHaste.Drawing.Colors.ColorPalette.Replace(System.Drawing.Color,System.Drawing.Color)">
+            <summary>Replace all instances of one color with another color.</summary>
+        </member>
+        <member name="M:WithoutHaste.Drawing.Colors.ColorPalette.ReplaceAt(System.Int32,System.Drawing.Color)">
+            <summary>Replace the color at a specific position with another color.</summary>
+            <exception cref="T:System.IndexOutOfRangeException">Index is too low or too high for palette.</exception>
+        </member>
+        <member name="M:WithoutHaste.Drawing.Colors.ColorPalette.Clear">
+            <summary>
+            Remove all colors from palette.
+            </summary>
+        </member>
+        <member name="T:WithoutHaste.Drawing.Colors.ACOColorSpaceException">
+            <summary>Error related to .aco file format, color space 0.</summary>
+        </member>
+        <member name="F:WithoutHaste.Drawing.Colors.ACOColorSpaceException.ColorSpace">
+            <summary></summary>
+        </member>
+        <member name="M:WithoutHaste.Drawing.Colors.ACOColorSpaceException.#ctor(System.String,System.Int32)">
+            <summary></summary>
+        </member>
+        <member name="T:WithoutHaste.Drawing.Colors.ACOFormatException">
+            <summary>Error related to .aco file format.</summary>
+        </member>
+        <member name="M:WithoutHaste.Drawing.Colors.ACOFormatException.#ctor(System.String)">
+            <summary></summary>
+        </member>
+        <member name="T:WithoutHaste.Drawing.Colors.ExtensionNotSupportedException">
+            <summary>File extension is not supported.</summary>
+        </member>
+        <member name="F:WithoutHaste.Drawing.Colors.ExtensionNotSupportedException.Extension">
+            <summary>
+            The extension that is not supported.
+            </summary>
+        </member>
+        <member name="F:WithoutHaste.Drawing.Colors.ExtensionNotSupportedException.SupportedExtensions">
+            <summary>
+            Comma-delimited list of supported extensions.
+            </summary>
+        </member>
+        <member name="M:WithoutHaste.Drawing.Colors.ExtensionNotSupportedException.#ctor(System.String,System.String,System.String)">
+            <summary></summary>
+        </member>
+        <member name="T:WithoutHaste.Drawing.Colors.FileFormatException">
+            <summary> Error related to the format of a file.</summary>
+        </member>
+        <member name="M:WithoutHaste.Drawing.Colors.FileFormatException.#ctor(System.String)">
+            <summary></summary>
+        </member>
+        <member name="T:WithoutHaste.Drawing.Colors.RangeType">
+            <summary>
+            Defines whether minimum and maximum values are included in the range.
+            </summary>
+            <remarks>
+             <list type="bullet">
+              <listheader>
+              Terminology:
+              </listheader>
+              <item>
+               <term>I</term><description>Inclusive</description>
+              </item>
+              <item>
+               <term>E</term><description>Exclusive</description>
+              </item>
+             </list>
+            </remarks>
+            <example>IE: Minimum value included in range, Maximum value excluded from range.</example>
+        </member>
+        <member name="F:WithoutHaste.Drawing.Colors.RangeType.Invalid">
+            <summary></summary>
+        </member>
+        <member name="F:WithoutHaste.Drawing.Colors.RangeType.II">
+            <summary>Min and max both included in range.</summary>
+        </member>
+        <member name="F:WithoutHaste.Drawing.Colors.RangeType.IE">
+            <summary>Only min included in range.</summary>
+        </member>
+        <member name="F:WithoutHaste.Drawing.Colors.RangeType.EI">
+            <summary>Only max included in range.</summary>
+        </member>
+        <member name="F:WithoutHaste.Drawing.Colors.RangeType.EE">
+            <summary>Min and max not included in range.</summary>
+        </member>
+        <member name="T:WithoutHaste.Drawing.Colors.OutOfRangeException`1">
+            <summary>Value was not in the expected range.</summary>
+        </member>
+        <member name="F:WithoutHaste.Drawing.Colors.OutOfRangeException`1.Minimum">
+            <summary>Range minimum.</summary>
+        </member>
+        <member name="F:WithoutHaste.Drawing.Colors.OutOfRangeException`1.Maximum">
+            <summary>Range maximum.</summary>
+        </member>
+        <member name="F:WithoutHaste.Drawing.Colors.OutOfRangeException`1.Type">
+            <summary>Type of range.</summary>
+        </member>
+        <member name="F:WithoutHaste.Drawing.Colors.OutOfRangeException`1.Value">
+            <summary>
+            Value that was out of range.
+            </summary>
+        </member>
+        <member name="M:WithoutHaste.Drawing.Colors.OutOfRangeException`1.#ctor(System.String,System.String,`0,`0,WithoutHaste.Drawing.Colors.RangeType,`0)">
+            <summary></summary>
+        </member>
+        <member name="T:WithoutHaste.Drawing.Colors.FormatACO">
+            <summary>
+            Photoshop *.aco color palette file format.
+            </summary>
+        </member>
+        <member name="P:WithoutHaste.Drawing.Colors.FormatACO.ColorPalette">
+            <summary></summary>
+        </member>
+        <member name="M:WithoutHaste.Drawing.Colors.FormatACO.#ctor(System.String)">
+            <summary>Load color palette from file.</summary>
+            <param name="fullFilename">Path + filename + extension.</param>
+        </member>
+        <member name="M:WithoutHaste.Drawing.Colors.FormatACO.Load(System.String)">
+            <summary>Load and return color palette from file.</summary>
+            <param name="fullFilename">Path + filename + extension.</param>
+        </member>
+        <member name="M:WithoutHaste.Drawing.Colors.FormatACO.Save(System.String,WithoutHaste.Drawing.Colors.ColorPalette)">
+            <summary>Save color palette in Version 1 .aco format.</summary>
+            <param name="fullFilename">Path + filename + extension.</param>
+        </member>
+        <member name="M:WithoutHaste.Drawing.Colors.FormatACO.Save(System.String)">
+            <summary>Save color palette in Version 1 .aco format.</summary>
+            <param name="fullFilename">Path + filename + extension.</param>
+        </member>
+        <member name="M:WithoutHaste.Drawing.Colors.FormatACO.LoadVersion1(System.Int32,System.Int32)">
+            <summary>
+            Load version 1 data.
+            </summary>
+            <param name="index">Starting words[index] after the color count.</param>
+            <returns>Starting index of next section of the file.</returns>
+        </member>
+        <member name="M:WithoutHaste.Drawing.Colors.FormatACO.LoadVersion2(System.Int32,System.Int32)">
+            <summary>
+            Load version 2 data.
+            </summary>
+            <param name="index">Starting words[index] after the color count.</param>
+            <returns>Starting index of next section of the file.</returns>
+        </member>
+        <member name="T:WithoutHaste.Drawing.Colors.FormatGPL">
+            <summary>
+            GIMP *.gpl color palette file format.
+            </summary>
+        </member>
+        <member name="P:WithoutHaste.Drawing.Colors.FormatGPL.ColorPalette">
+            <summary></summary>
+        </member>
+        <member name="P:WithoutHaste.Drawing.Colors.FormatGPL.Header">
+            <summary></summary>
+        </member>
+        <member name="P:WithoutHaste.Drawing.Colors.FormatGPL.Name">
+            <summary></summary>
+        </member>
+        <member name="M:WithoutHaste.Drawing.Colors.FormatGPL.#ctor(System.String)">
+            <summary>Load color palette from file.</summary>
+            <param name="fullFilename">Path + filename + extension.</param>
+        </member>
+        <member name="M:WithoutHaste.Drawing.Colors.FormatGPL.Load(System.String)">
+            <summary>Load and return color palette from file.</summary>
+            <param name="fullFilename">Path + filename + extension.</param>
+        </member>
+        <member name="M:WithoutHaste.Drawing.Colors.FormatGPL.Save(System.String,WithoutHaste.Drawing.Colors.ColorPalette)">
+            <summary>Save color palette in standard .gpl format</summary>
+            <param name="fullFilename">Path + filename + extension.</param>
+        </member>
+        <member name="M:WithoutHaste.Drawing.Colors.FormatGPL.Save(System.String)">
+            <summary>Save color palette in standard .gpl format</summary>
+            <param name="fullFilename">Path + filename + extension.</param>
+        </member>
+        <member name="T:WithoutHaste.Drawing.Colors.FormatPAL">
+            <summary>
+            Paint Shop Pro *.pal color palette file format.
+            </summary>
+        </member>
+        <member name="P:WithoutHaste.Drawing.Colors.FormatPAL.ColorPalette">
+            <summary></summary>
+        </member>
+        <member name="P:WithoutHaste.Drawing.Colors.FormatPAL.Header">
+            <summary></summary>
+        </member>
+        <member name="P:WithoutHaste.Drawing.Colors.FormatPAL.Version">
+            <summary></summary>
+        </member>
+        <member name="M:WithoutHaste.Drawing.Colors.FormatPAL.#ctor(System.String)">
+            <summary>Load color palette from file.</summary>
+            <param name="fullFilename">Path + filename + extension.</param>
+        </member>
+        <member name="M:WithoutHaste.Drawing.Colors.FormatPAL.Load(System.String)">
+            <summary>Load and return color palette from file.</summary>
+            <param name="fullFilename">Path + filename + extension.</param>
+        </member>
+        <member name="M:WithoutHaste.Drawing.Colors.FormatPAL.Save(System.String,WithoutHaste.Drawing.Colors.ColorPalette)">
+            <summary>Save color palette in Version 0100 .pal format.</summary>
+            <param name="fullFilename">Path + filename + extension.</param>
+        </member>
+        <member name="M:WithoutHaste.Drawing.Colors.FormatPAL.Save(System.String)">
+            <summary>Save color palette in Version 0100 .pal format.</summary>
+            <param name="fullFilename">Path + filename + extension.</param>
+        </member>
+        <member name="T:WithoutHaste.Drawing.Colors.HSV">
+            <summary>
+            Color represented as Hue, Saturation, Value.
+            </summary>
+        </member>
+        <member name="F:WithoutHaste.Drawing.Colors.HSV.Hue">
+            <summary>
+            Hue range [0, 360)
+            </summary>
+        </member>
+        <member name="F:WithoutHaste.Drawing.Colors.HSV.Saturation">
+            <summary>
+            Saturation range [0, 1]
+            </summary>
+        </member>
+        <member name="F:WithoutHaste.Drawing.Colors.HSV.Value">
+            <summary>
+            Value range [0,1]
+            </summary>
+        </member>
+        <member name="M:WithoutHaste.Drawing.Colors.HSV.#ctor(System.Single,System.Single,System.Single)">
+            <summary></summary>
+            <param name="hue">range [0, 360)</param>
+            <param name="saturation">range [0, 1]</param>
+            <param name="value">range [0,1]</param>
+        </member>
+        <member name="M:WithoutHaste.Drawing.Colors.HSV.ToString">
+            <summary></summary>
+        </member>
+        <member name="T:WithoutHaste.Drawing.Colors.IPaletteFormat">
+            <summary>
+            Color palette file format.
+            </summary>
+        </member>
+        <member name="M:WithoutHaste.Drawing.Colors.IO.ValidateFilename(System.String,System.String)">
+            <param name="fullFilename"></param>
+            <param name="expectedExtension">Include the dot</param>
+        </member>
+        <member name="T:WithoutHaste.Drawing.Colors.ConvertColors">
+            <summary>Convert colors between color spaces.</summary>
+            <remarks>
+             <list type="bullet">
+              <listheader>Supported color spaces:</listheader>
+              <item>Red/Green/Blue (RGB)</item>
+              <item>Hue/Saturation/Value (HSV)</item>
+              <item>Cyan/Magenta/Yellow/Black (CMYK)</item>
+              <item>Hexadecimal</item>
+             </list>
+            </remarks>
+        </member>
+        <member name="M:WithoutHaste.Drawing.Colors.ConvertColors.RGBToColor(System.Int32,System.Int32,System.Int32)">
+            <summary>Convert from Red, Green, Blue to Color.</summary>
+            <param name="red">Range [0, 255]</param>
+            <param name="green">Range [0, 255]</param>
+            <param name="blue">Range [0, 255]</param>
+            <exception cref="T:WithoutHaste.Drawing.Colors.OutOfRangeException`1">Red or Green or Blue value is out of range.</exception>
+        </member>
+        <member name="M:WithoutHaste.Drawing.Colors.ConvertColors.HSVToColor(System.Single,System.Single,System.Single)">
+            <summary>Convert from Hue, Saturation, Value to Color.</summary>
+            <param name="hue">Range [0, 360)</param>
+            <param name="saturation">Range [0, 1]</param>
+            <param name="value">Range [0, 1]</param>
+            <exception cref="T:WithoutHaste.Drawing.Colors.OutOfRangeException`1">Hue or Saturation or Value value is out of range.</exception>
+        </member>
+        <member name="M:WithoutHaste.Drawing.Colors.ConvertColors.ToColor(WithoutHaste.Drawing.Colors.HSV)">
+            <summary>Convert <see cref="T:WithoutHaste.Drawing.Colors.HSV"/> to Color.</summary>
+        </member>
+        <member name="M:WithoutHaste.Drawing.Colors.ConvertColors.ToHSV(System.Drawing.Color)">
+            <summary>Converts Color to <see cref="T:WithoutHaste.Drawing.Colors.HSV"/>, ignoring Alpha.</summary>
+        </member>
+        <member name="M:WithoutHaste.Drawing.Colors.ConvertColors.CMYKToColor(System.Single,System.Single,System.Single,System.Single)">
+            <summary>Convert Cyan, Magenta, Yellow, Black to Color.</summary>
+            <param name="cyan">Range [0, 1]</param>
+            <param name="magenta">Range [0, 1]</param>
+            <param name="yellow">Range [0, 1]</param>
+            <param name="black">Range [0, 1]</param>
+            <exception cref="T:WithoutHaste.Drawing.Colors.OutOfRangeException`1">Cyan or Magenta or Yellow or Black value is out of range.</exception>
+        </member>
+        <member name="M:WithoutHaste.Drawing.Colors.ConvertColors.ToHexadecimal(System.Drawing.Color)">
+            <summary>Converts Color to Hexadecimal string.</summary>
+            <returns>Format #RRGGBB</returns>
+        </member>
+        <member name="M:WithoutHaste.Drawing.Colors.ConvertColors.HexadecimalToColor(System.String)">
+            <summary>Converts Hexadecimal string to Color.</summary>
+            <param name="hexadecimal">Format #RRGGBB or RRGGBB</param>
+            <exception cref="T:System.ArgumentException">Hexadecimal string is not in supported format.</exception>
+        </member>
+        <member name="M:WithoutHaste.Drawing.Colors.ConvertColors.TryParseHexadecimal(System.String,System.Drawing.Color@)">
+            <summary>Attempts to convert Hexadecimal string to Color. Does not throw exceptions.</summary>
+            <remarks>Supported formats: #RRGGBB and RRGGBB.</remarks>
+            <returns>True, if parse is successful.</returns>
+        </member>
+        <member name="M:WithoutHaste.Drawing.Colors.ConvertColors.TryParseRGB(System.String,System.Drawing.Color@)">
+            <summary>Attempts to convert Red, Green, Blue string to Color. Does not throw exceptions.</summary>
+            <remarks>Supported formats: rgb(R,G,B) and (R,G,B) and R,G,B.</remarks>
+            <returns>True, if parse is successful.</returns>
+        </member>
+        <member name="M:WithoutHaste.Drawing.Colors.ConvertColors.TryParseHSV(System.String,System.Drawing.Color@)">
+            <summary>Attempts to convert Hue, Saturation, Value string to Color. Does not throw exceptions.</summary>
+            <remarks>Supported formats: hsv(H,S,V) and (H,S,V) and H,S,V.</remarks>
+            <returns>True, if parse is successful.</returns>
+        </member>
+    </members>
+</doc>

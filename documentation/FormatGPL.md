@@ -1,51 +1,44 @@
-# FormatGPL object
+# FormatGPL
 
-GIMP *.gpl color palette file format operations.
+GIMP *.gpl color palette file format.
 
-`filename` always refers to the full path, filename, and extension.
+Base Type: System.Object
 
 ## Properties
 
-`ColorPalette`: the palette loaded from file, or to be saved to file.
+### ColorPalette ColorPalette
 
-`Header`: palette file header
+### String Header
 
-`Name`: palette name
+### String Name
 
-## Constructor
+## Constructors
 
-Loads a palette from file.
+### FormatGPL(System.String fullFilename)
 
-`new FormatGPL(filename)`
+Load color palette from file.
 
-Possible exceptions:  
-`FileNotFoundException`: file not found  
-`ExtensionNotSupportedException`: file extension not supported  
+Parameter fullFilename: Path + filename + extension.
 
 ## Static Methods
 
-### Load
+### ColorPalette Load(System.String fullFilename)
 
-Load a color palette from file.
+Load and return color palette from file.
 
-`ColorPalette palette = FormatGPL.Load(filename);`
+Parameter fullFilename: Path + filename + extension.
 
-Returns the color palette.
+### Void Save(System.String fullFilename, ColorPalette palette)
 
-Possible exceptions:  
-`FileNotFoundException`: file not found  
-`ExtensionNotSupportedException`: file extension not supported  
+Save color palette in standard .gpl format
 
-### Save
-
-Save a color palette to file.
-
-`FormatGPL.Save(filename, colorPalette);`
+Parameter fullFilename: Path + filename + extension.
 
 ## Methods
 
-### Save
+### Void Save(System.String fullFilename)
 
-Save a color palette to file.
+Save color palette in standard .gpl format
 
-`formatGPL.Save(filename);`
+Parameter fullFilename: Path + filename + extension.
+

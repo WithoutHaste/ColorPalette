@@ -1,75 +1,89 @@
-# ConvertColors static object
+# ConvertColors
+
+Static type.
 
 Convert colors between color spaces.
 
-## Color Spaces
+Supported color spaces:  
+* Red/Green/Blue (RGB)  
+* Hue/Saturation/Value (HSV)  
+* Cyan/Magenta/Yellow/Black (CMYK)  
+* Hexadecimal  
 
-### Red/Green/Blue
+Base Type: System.Object
 
-Red, Green, and Blue values are all in the range [0, 255].
+## Static Methods
 
-### Hue/Saturation/Value
+### Color CMYKToColor(System.Single cyan, System.Single magenta, System.Single yellow, System.Single black)
 
-Hue is in the range [0, 360).
+Convert Cyan, Magenta, Yellow, Black to Color.
 
-Saturation and Value are in the range [0, 1].
+Parameter cyan: Range [0, 1]
+Parameter magenta: Range [0, 1]
+Parameter yellow: Range [0, 1]
+Parameter black: Range [0, 1]
 
-## Objects
+OutOfRangeException`1: Cyan or Magenta or Yellow or Black value is out of range.
 
-System.Drawing.Color: alpha, red, green, blue color space
+### Color HexadecimalToColor(System.String hexadecimal)
 
-HSV: hue, saturation, value color space
+Converts Hexadecimal string to Color.
 
-## To System.Drawing.Color
+Parameter hexadecimal: Format #RRGGBB or RRGGBB
 
-From Red/Green/Blue:  
-`ConvertColors.RGBToColor(red, green, blue);`
+ArgumentException: Hexadecimal string is not in supported format.
 
-From Red/Green/Blue:  
-Formats: "rgb(red, green, blue)" or "(red, green, blue)" or "red, green, blue"  
-```
-System.Drawing.Color color;
-string rgb = "rgb(255, 0, 0)";
-bool success = ConvertColors.TryParseRGB(rgb, out color);
-```
+### Color HSVToColor(System.Single hue, System.Single saturation, System.Single value)
 
-From Cyan/Magenta/Yellow/Black:  
-`ConvertColors.CMYKToColor(cyan, magenta, yellow, black);`
+Convert from Hue, Saturation, Value to Color.
 
-From Hue/Saturation/Value:  
-`ConvertColors.HSVToColor(hue, saturation, value);`
+Parameter hue: Range [0, 360)
+Parameter saturation: Range [0, 1]
+Parameter value: Range [0, 1]
 
-From HSV:  
-`ConvertColors.ToColor(hsv);`
+OutOfRangeException`1: Hue or Saturation or Value value is out of range.
 
-From Hue/Saturation/Value:  
-Formats: "hsv(hue, saturation, value)" or "(hue, saturation, value)" or "hue, saturation, value"  
-```
-System.Drawing.Color color;
-string hsv = "hsv(0, 1, 1)";
-bool success = ConvertColors.TryParseHSV(hsv, out color);
-```
+### Color RGBToColor(System.Int32 red, System.Int32 green, System.Int32 blue)
 
-From Hexadecimal string:  
-Formats: "#RRGGBB" or "RRGGBB"  
-`ConvertColors.HexadecimalToColor(hexadecimal);`
+Convert from Red, Green, Blue to Color.
 
-From Hexadecimal string:  
-Formats: "#RRGGBB" or "RRGGBB"  
-```
-System.Drawing.Color color;
-string hexadecimal = "#FF0000";
-bool success = ConvertColors.TryParseHexadecimal(hexadecimal, out color);
-```
+Parameter red: Range [0, 255]
+Parameter green: Range [0, 255]
+Parameter blue: Range [0, 255]
 
-## To HSV
+OutOfRangeException`1: Red or Green or Blue value is out of range.
 
-From System.Drawing.Color:  
-`ConvertColors.ToHSV(color);`
+### Color ToColor(HSV hsv)
 
-## To Hexadecimal string
+Convert [HSV](HSV.md) to Color.
 
-Format: #RRGGBB
+### String ToHexadecimal(System.Drawing.Color color)
 
-From System.Drawing.Color:  
-`ConvertColors.ToHexadecimal(color);`
+Converts Color to Hexadecimal string.
+
+Returns: Format #RRGGBB
+
+### HSV ToHSV(System.Drawing.Color color)
+
+Converts Color to [HSV](HSV.md), ignoring Alpha.
+
+## Methods
+
+### TryParseHexadecimal(System.String, System.Drawing.Color@)
+
+Attempts to convert Hexadecimal string to Color. Does not throw exceptions.
+
+Returns: True, if parse is successful.
+
+### TryParseHSV(System.String, System.Drawing.Color@)
+
+Attempts to convert Hue, Saturation, Value string to Color. Does not throw exceptions.
+
+Returns: True, if parse is successful.
+
+### TryParseRGB(System.String, System.Drawing.Color@)
+
+Attempts to convert Red, Green, Blue string to Color. Does not throw exceptions.
+
+Returns: True, if parse is successful.
+

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace WithoutHaste.Drawing.Colors
 {
+	/// <summary>File extension is not supported.</summary>
 	public class ExtensionNotSupportedException : IOException
 	{
 		/// <summary>
@@ -18,6 +19,7 @@ namespace WithoutHaste.Drawing.Colors
 		/// </summary>
 		public readonly string SupportedExtensions;
 
+		/// <summary></summary>
 		public ExtensionNotSupportedException(string message, string extension, string supportedExtensions) : base(message)
 		{
 			Extension = extension;

@@ -1,51 +1,44 @@
-# FormatPAL object
+# FormatPAL
 
-Paint Shop Pro *.pal color palette file format operations.
+Paint Shop Pro *.pal color palette file format.
 
-`filename` always refers to the full path, filename, and extension.
+Base Type: System.Object
 
 ## Properties
 
-`ColorPalette`: the palette loaded from file, or to be saved to file.
+### ColorPalette ColorPalette
 
-`Header`: palette file header
+### String Header
 
-`Version`: file format version
+### String Version
 
-## Constructor
+## Constructors
 
-Loads a palette from file.
+### FormatPAL(System.String fullFilename)
 
-`new FormatPAL(filename)`
+Load color palette from file.
 
-Possible exceptions:  
-`FileNotFoundException`: file not found  
-`ExtensionNotSupportedException`: file extension not supported  
+Parameter fullFilename: Path + filename + extension.
 
 ## Static Methods
 
-### Load
+### ColorPalette Load(System.String fullFilename)
 
-Load a color palette from file.
+Load and return color palette from file.
 
-`ColorPalette palette = FormatPAL.Load(filename);`
+Parameter fullFilename: Path + filename + extension.
 
-Returns the color palette.
+### Void Save(System.String fullFilename, ColorPalette palette)
 
-Possible exceptions:  
-`FileNotFoundException`: file not found  
-`ExtensionNotSupportedException`: file extension not supported  
+Save color palette in Version 0100 .pal format.
 
-### Save
-
-Save a color palette to file.
-
-`FormatPAL.Save(filename, colorPalette);`
+Parameter fullFilename: Path + filename + extension.
 
 ## Methods
 
-### Save
+### Void Save(System.String fullFilename)
 
-Save a color palette to file.
+Save color palette in Version 0100 .pal format.
 
-`formatPAL.Save(filename);`
+Parameter fullFilename: Path + filename + extension.
+

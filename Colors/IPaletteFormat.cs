@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace WithoutHaste.Drawing.Colors
 {
+	/// <summary>
+	/// Color palette file format.
+	/// </summary>
 	public interface IPaletteFormat
 	{
 	}

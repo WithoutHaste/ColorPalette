@@ -24,6 +24,10 @@ namespace WithoutHaste.Drawing.Colors
 		/// </summary>
 		public float Value;
 
+		/// <summary></summary>
+		/// <param name="hue">range [0, 360)</param>
+		/// <param name="saturation">range [0, 1]</param>
+		/// <param name="value">range [0,1]</param>
 		public HSV(float hue, float saturation, float value)
 		{
 			if(hue < 0 || hue >= 360) throw new OutOfRangeException<float>("Hue out of range.", "hue", 0, 360, RangeType.IE, hue);
@@ -35,6 +39,7 @@ namespace WithoutHaste.Drawing.Colors
 			Value = value;
 		}
 
+		/// <summary></summary>
 		public override string ToString()
 		{
 			return String.Format("({0},{1},{2})", Hue, Saturation, Value);

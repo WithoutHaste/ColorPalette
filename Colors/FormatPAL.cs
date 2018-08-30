@@ -14,11 +14,16 @@ namespace WithoutHaste.Drawing.Colors
 	public class FormatPAL : IPaletteFormat
 	{
 		private ColorPalette colorPalette;
+		/// <summary></summary>
 		public ColorPalette ColorPalette { get { return colorPalette; } }
 
+		/// <summary></summary>
 		public string Header { get; protected set; }
+		/// <summary></summary>
 		public string Version { get; protected set; }
 
+		/// <summary>Load color palette from file.</summary>
+		/// <param name="fullFilename">Path + filename + extension.</param>
 		public FormatPAL(string fullFilename)
 		{
 			colorPalette = new ColorPalette();
@@ -35,21 +40,24 @@ namespace WithoutHaste.Drawing.Colors
 			LoadVersion0100(fileLines);
 		}
 
+		/// <summary>Load and return color palette from file.</summary>
+		/// <param name="fullFilename">Path + filename + extension.</param>
 		public static ColorPalette Load(string fullFilename)
 		{
 			FormatPAL pal = new FormatPAL(fullFilename);
 			return pal.ColorPalette;
 		}
 
-		/// <summary>
-		/// Save color palette in Version 0100 .pal format
-		/// </summary>
+		/// <summary>Save color palette in Version 0100 .pal format.</summary>
+		/// <param name="fullFilename">Path + filename + extension.</param>
 		public static void Save(string fullFilename, ColorPalette palette)
 		{
 			string[] fileLines = SaveVersion0100(palette);
 			File.WriteAllLines(fullFilename, fileLines);
 		}
 
+		/// <summary>Save color palette in Version 0100 .pal format.</summary>
+		/// <param name="fullFilename">Path + filename + extension.</param>
 		public void Save(string fullFilename)
 		{
 			Save(fullFilename, ColorPalette);

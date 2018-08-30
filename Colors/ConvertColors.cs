@@ -7,13 +7,25 @@ using System.Threading.Tasks;
 
 namespace WithoutHaste.Drawing.Colors
 {
+	/// <summary>Convert colors between color spaces.</summary>
+	/// <remarks>
+	///  <list type="bullet">
+	///   <listheader>Supported color spaces:</listheader>
+	///   <item>Red/Green/Blue (RGB)</item>
+	///   <item>Hue/Saturation/Value (HSV)</item>
+	///   <item>Cyan/Magenta/Yellow/Black (CMYK)</item>
+	///   <item>Hexadecimal</item>
+	///  </list>
+	/// </remarks>
 	public static class ConvertColors
 	{
 		internal const int ALPHA_MAX = 255;
 
+		/// <summary>Convert from Red, Green, Blue to Color.</summary>
 		/// <param name="red">Range [0, 255]</param>
 		/// <param name="green">Range [0, 255]</param>
 		/// <param name="blue">Range [0, 255]</param>
+		/// <exception cref="OutOfRangeException{T}">Red or Green or Blue value is out of range.</exception>
 		public static Color RGBToColor(int red, int green, int blue)
 		{
 			if(red < 0 || red > 255) throw new OutOfRangeException<int>("Red out of range.", "red", 0, 255, RangeType.II, red);
@@ -22,14 +34,17 @@ namespace WithoutHaste.Drawing.Colors
 			return Color.FromArgb(ALPHA_MAX, red, green, blue);
 		}
 
+		/// <summary>Convert from Hue, Saturation, Value to Color.</summary>
 		/// <param name="hue">Range [0, 360)</param>
 		/// <param name="saturation">Range [0, 1]</param>
 		/// <param name="value">Range [0, 1]</param>
+		/// <exception cref="OutOfRangeException{T}">Hue or Saturation or Value value is out of range.</exception>
 		public static Color HSVToColor(float hue, float saturation, float value)
 		{
 			return ToColor(new HSV(hue, saturation, value));
 		}
 
+		/// <summary>Convert <see cref="HSV"/> to Color.</summary>
 		public static Color ToColor(HSV hsv)
 		{
 			float c = hsv.Value * hsv.Saturation;
@@ -74,9 +89,7 @@ namespace WithoutHaste.Drawing.Colors
 			return RGBToColor(red, green, blue);
 		}
 
-		/// <summary>
-		/// Converts RGB to HSV, ignoring Alpha
-		/// </summary>
+		/// <summary>Converts Color to <see cref="HSV"/>, ignoring Alpha.</summary>
 		public static HSV ToHSV(Color color)
 		{
 			float rPrime = color.R / 255f;
@@ -110,10 +123,12 @@ namespace WithoutHaste.Drawing.Colors
 			return new HSV(hue, saturation, value);
 		}
 
+		/// <summary>Convert Cyan, Magenta, Yellow, Black to Color.</summary>
 		/// <param name="cyan">Range [0, 1]</param>
 		/// <param name="magenta">Range [0, 1]</param>
 		/// <param name="yellow">Range [0, 1]</param>
 		/// <param name="black">Range [0, 1]</param>
+		/// <exception cref="OutOfRangeException{T}">Cyan or Magenta or Yellow or Black value is out of range.</exception>
 		public static Color CMYKToColor(float cyan, float magenta, float yellow, float black)
 		{
 			if(cyan < 0 || cyan > 1) throw new OutOfRangeException<float>("Cyan out of range.", "cyan", 0, 1, RangeType.II, cyan);
@@ -126,6 +141,7 @@ namespace WithoutHaste.Drawing.Colors
 			return RGBToColor(red, green, blue);
 		}
 
+		/// <summary>Converts Color to Hexadecimal string.</summary>
 		/// <returns>Format #RRGGBB</returns>
 		public static string ToHexadecimal(Color color)
 		{
@@ -135,7 +151,9 @@ namespace WithoutHaste.Drawing.Colors
 			return String.Format("#{0}{1}{2}", red, green, blue);
 		}
 
+		/// <summary>Converts Hexadecimal string to Color.</summary>
 		/// <param name="hexadecimal">Format #RRGGBB or RRGGBB</param>
+		/// <exception cref="ArgumentException">Hexadecimal string is not in supported format.</exception>
 		public static Color HexadecimalToColor(string hexadecimal)
 		{
 			if(hexadecimal.StartsWith("#"))
@@ -151,12 +169,9 @@ namespace WithoutHaste.Drawing.Colors
 			return Color.FromArgb(ALPHA_MAX, red, green, blue);
 		}
 
-		/// <summary>
-		/// Supported formats:
-		///		#RRGGBB
-		///		RRGGBB
-		///	</summary>
-		///	<returns>True, if parse is successful</returns>
+		/// <summary>Attempts to convert Hexadecimal string to Color. Does not throw exceptions.</summary>
+		/// <remarks>Supported formats: #RRGGBB and RRGGBB.</remarks>
+		///	<returns>True, if parse is successful.</returns>
 		public static bool TryParseHexadecimal(string text, out Color color)
 		{
 			try
@@ -171,13 +186,9 @@ namespace WithoutHaste.Drawing.Colors
 			}
 		}
 
-		/// <summary>
-		/// Supported formats:
-		///		rgb(R,G,B)
-		///		(R,G,B)
-		///		R,G,B
-		///	</summary>
-		///	<returns>True, if parse is successful</returns>
+		/// <summary>Attempts to convert Red, Green, Blue string to Color. Does not throw exceptions.</summary>
+		/// <remarks>Supported formats: rgb(R,G,B) and (R,G,B) and R,G,B.</remarks>
+		///	<returns>True, if parse is successful.</returns>
 		public static bool TryParseRGB(string text, out Color color)
 		{
 			try
@@ -197,13 +208,9 @@ namespace WithoutHaste.Drawing.Colors
 			}
 		}
 
-		/// <summary>
-		/// Supported formats:
-		///		hsv(H,S,V)
-		///		(H,S,V)
-		///		H,S,V
-		///	</summary>
-		///	<returns>True, if parse is successful</returns>
+		/// <summary>Attempts to convert Hue, Saturation, Value string to Color. Does not throw exceptions.</summary>
+		/// <remarks>Supported formats: hsv(H,S,V) and (H,S,V) and H,S,V.</remarks>
+		///	<returns>True, if parse is successful.</returns>
 		public static bool TryParseHSV(string text, out Color color)
 		{
 			try

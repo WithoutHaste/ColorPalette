@@ -1,47 +1,40 @@
-# FormatACO object
+# FormatACO
 
-Photoshop *.aco color palette file format operations.
+Photoshop *.aco color palette file format.
 
-`filename` always refers to the full path, filename, and extension.
+Base Type: System.Object
 
 ## Properties
 
-`ColorPalette`: the palette loaded from file, or to be saved to file.
+### ColorPalette ColorPalette
 
-## Constructor
+## Constructors
 
-Loads a palette from file.
+### FormatACO(System.String fullFilename)
 
-`new FormatACO(filename)`
+Load color palette from file.
 
-Possible exceptions:  
-`FileNotFoundException`: file not found  
-`ExtensionNotSupportedException`: file extension not supported  
+Parameter fullFilename: Path + filename + extension.
 
 ## Static Methods
 
-### Load
+### ColorPalette Load(System.String fullFilename)
 
-Load a color palette from file.
+Load and return color palette from file.
 
-`ColorPalette palette = FormatACO.Load(filename);`
+Parameter fullFilename: Path + filename + extension.
 
-Returns the color palette.
+### Void Save(System.String fullFilename, ColorPalette palette)
 
-Possible exceptions:  
-`FileNotFoundException`: file not found  
-`ExtensionNotSupportedException`: file extension not supported  
+Save color palette in Version 1 .aco format.
 
-### Save
-
-Save a color palette to file.
-
-`FormatACO.Save(filename, colorPalette);`
+Parameter fullFilename: Path + filename + extension.
 
 ## Methods
 
-### Save
+### Void Save(System.String fullFilename)
 
-Save a color palette to file.
+Save color palette in Version 1 .aco format.
 
-`formatACO.Save(filename);`
+Parameter fullFilename: Path + filename + extension.
+

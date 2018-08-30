@@ -16,10 +16,13 @@ namespace WithoutHaste.Drawing.Colors
 //		private static Rounding PHOTOSHOP_ROUNDING = Rounding.Down;
 
 		private ColorPalette colorPalette;
+		/// <summary></summary>
 		public ColorPalette ColorPalette { get { return colorPalette; } }
 
 		private Word[] words;
 
+		/// <summary>Load color palette from file.</summary>
+		/// <param name="fullFilename">Path + filename + extension.</param>
 		public FormatACO(string fullFilename)
 		{
 			colorPalette = new ColorPalette();
@@ -50,21 +53,24 @@ namespace WithoutHaste.Drawing.Colors
 			}
 		}
 
+		/// <summary>Load and return color palette from file.</summary>
+		/// <param name="fullFilename">Path + filename + extension.</param>
 		public static ColorPalette Load(string fullFilename)
 		{
 			FormatACO aco = new FormatACO(fullFilename);
 			return aco.ColorPalette;
 		}
 
-		/// <summary>
-		/// Save color palette in Version 1 .aco format
-		/// </summary>
+		/// <summary>Save color palette in Version 1 .aco format.</summary>
+		/// <param name="fullFilename">Path + filename + extension.</param>
 		public static void Save(string fullFilename, ColorPalette palette)
 		{
 			byte[] fileBytes = SaveVersion1(palette);
 			File.WriteAllBytes(fullFilename, fileBytes);
 		}
 
+		/// <summary>Save color palette in Version 1 .aco format.</summary>
+		/// <param name="fullFilename">Path + filename + extension.</param>
 		public void Save(string fullFilename)
 		{
 			Save(fullFilename, ColorPalette);

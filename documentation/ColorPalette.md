@@ -1,89 +1,66 @@
-# ColorPalette object
+# ColorPalette
 
 An ordered list of colors.
 
+Base Type: System.Object
+
 ## Properties
 
-`Colors`: list of System.Drawing.Color objects which make up the palette
+### Color[] Colors
 
-`Count`: number of colors in the palette
+Colors in palette.
 
-## Constructor
+### Int32 Count
 
-Parameterless constructor: `new ColorPalette()`
+Length of palette.
+
+## Constructors
+
+### ColorPalette()
 
 ## Static Methods
 
-### Load
+### ColorPalette Load(System.String fullFilename)
 
-Load a color palette file. File format is determined by the extension of the `filename`. Include full path in `filename`.
-
-`ColorPalette palette = ColorPalette.Load(filename);`
-
-Possible exceptions:  
-`NotImplementedException`: file format is not yet supported
-
-[Full list of supported formats on main page.](../README.md)
+Load a color palette from file. Supported file formats: .aco, .gpl, .pal.
 
 ## Methods
 
-### Save
+### Int32 Add(System.Drawing.Color color)
 
-Save a color palette to file. File format is determined by the extension of the `filename`. Include full path in `filename`.
+Add color to end of palette.
 
-`palette.Save(filename);`
+Returns: Index of added color.
 
-Possible exceptions:  
-`NotImplementedException`: file format is not yet supported
+### Void Clear()
 
-[Full list of supported formats on main page.](../README.md)
+Remove all colors from palette.
 
-### Add
+### Void Insert(System.Drawing.Color color, System.Int32 index)
 
-Add a color to the end of the palette.
+Insert color at a position in the palette.
 
-`int index = palette.Add(color);`
+### Void Remove(System.Drawing.Color color)
 
-Returns the index of the color in the palette.
+Remove all instances of color from the palette.
 
-### Clear
+### Void RemoveAt(System.Int32 index)
 
-Remove all colors from the palette.
+Remove the color at a specific position in the palette.
 
-`palette.Clear();`
+IndexOutOfRangeException: Index is too low or too high for palette.
 
-### Insert
+### Void Replace(System.Drawing.Color oldColor, System.Drawing.Color newColor)
 
-Insert a color into a position in the palette.
+Replace all instances of one color with another color.
 
-`palette.Insert(color, index);`
+### Void ReplaceAt(System.Int32 index, System.Drawing.Color newColor)
 
-### Remove
+Replace the color at a specific position with another color.
 
-Remove all instances of a color from the palette.
+IndexOutOfRangeException: Index is too low or too high for palette.
 
-`palette.Remove(color);`
+### Void Save(System.String fullFilename)
 
-### RemoveAt
+Save a color palette to file. Supported file formats: .aco, .gpl, .pal.
 
-Remove a specified color from the palette, by the index position of the color.
-
-`palette.RemoveAt(index);`
-
-Possible exceptions:  
-`IndexOutOfRangeException`: index is not valid for palette length
-
-### Replace
-
-Replace all instances of a color in the palette with a new color.
-
-`palette.Replace(oldColor, newColor);`
-
-### ReplaceAt
-
-Replace the color at a specified index position in the palette with a new color.
-
-`palette.Replace(index, newColor);`
-
-Possible exceptions:  
-`IndexOutOfRangeException`: index is not valid for palette length

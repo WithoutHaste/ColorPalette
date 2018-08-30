@@ -14,11 +14,16 @@ namespace WithoutHaste.Drawing.Colors
 	public class FormatGPL : IPaletteFormat
 	{
 		private ColorPalette colorPalette;
+		/// <summary></summary>
 		public ColorPalette ColorPalette { get { return colorPalette; } }
 
+		/// <summary></summary>
 		public string Header { get; protected set; }
+		/// <summary></summary>
 		public string Name { get; protected set; }
 
+		/// <summary>Load color palette from file.</summary>
+		/// <param name="fullFilename">Path + filename + extension.</param>
 		public FormatGPL(string fullFilename)
 		{
 			colorPalette = new ColorPalette();
@@ -32,21 +37,24 @@ namespace WithoutHaste.Drawing.Colors
 			return fileLines.Where(line => !(line.StartsWith("#"))).ToArray();
 		}
 
+		/// <summary>Load and return color palette from file.</summary>
+		/// <param name="fullFilename">Path + filename + extension.</param>
 		public static ColorPalette Load(string fullFilename)
 		{
 			FormatGPL gpl = new FormatGPL(fullFilename);
 			return gpl.ColorPalette;
 		}
 
-		/// <summary>
-		/// Save color palette in Version 0100 .pal format
-		/// </summary>
+		/// <summary>Save color palette in standard .gpl format</summary>
+		/// <param name="fullFilename">Path + filename + extension.</param>
 		public static void Save(string fullFilename, ColorPalette palette)
 		{
 			string[] fileLines = ConvertToFileLines(palette);
 			File.WriteAllLines(fullFilename, fileLines);
 		}
 
+		/// <summary>Save color palette in standard .gpl format</summary>
+		/// <param name="fullFilename">Path + filename + extension.</param>
 		public void Save(string fullFilename)
 		{
 			Save(fullFilename, ColorPalette);

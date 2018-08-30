@@ -8,27 +8,32 @@ using System.Threading.Tasks;
 
 namespace WithoutHaste.Drawing.Colors
 {
+	/// <summary>
+	/// An ordered list of colors.
+	/// </summary>
 	public class ColorPalette
     {
 		private List<Color> colors = new List<Color>();
+		/// <summary>Colors in palette.</summary>
 		public Color[] Colors {
 			get {
 				return colors.ToArray();
 			}
 		}
-
+		/// <summary>Length of palette.</summary>
 		public int Count {
 			get {
 				return colors.Count;
 			}
 		}
 
+		/// <summary></summary>
 		public ColorPalette()
 		{
 		}
 
 		/// <summary>
-		/// Load a color palette from file. Supported file formats: .aco, .pal
+		/// Load a color palette from file. Supported file formats: .aco, .gpl, .pal.
 		/// </summary>
 		public static ColorPalette Load(string fullFilename)
 		{
@@ -46,7 +51,7 @@ namespace WithoutHaste.Drawing.Colors
 		}
 
 		/// <summary>
-		/// Save a color palette to file. Supported file formats: .aco, .pal
+		/// Save a color palette to file. Supported file formats: .aco, .gpl, .pal.
 		/// </summary>
 		public void Save(string fullFilename)
 		{
@@ -67,7 +72,7 @@ namespace WithoutHaste.Drawing.Colors
 		}
 
 		/// <summary>
-		/// Add color to end of list.
+		/// Add color to end of palette.
 		/// </summary>
 		/// <returns>Index of added color.</returns>
 		public int Add(Color color)
@@ -76,17 +81,21 @@ namespace WithoutHaste.Drawing.Colors
 			return colors.Count - 1;
 		}
 
+		/// <summary>Insert color at a position in the palette.</summary>
 		public void Insert(Color color, int index)
 		{
 			//todo what if index is below zero or way too high
 			colors.Insert(index, color);
 		}
 
+		/// <summary>Remove all instances of color from the palette.</summary>
 		public void Remove(Color color)
 		{
 			colors.RemoveAll((element => element == color));
 		}
 
+		/// <summary>Remove the color at a specific position in the palette.</summary>
+		/// <exception cref="IndexOutOfRangeException">Index is too low or too high for palette.</exception>
 		public void RemoveAt(int index)
 		{
 			if(index < 0 || index >= colors.Count)
@@ -94,6 +103,7 @@ namespace WithoutHaste.Drawing.Colors
 			colors.RemoveAt(index);
 		}
 
+		/// <summary>Replace all instances of one color with another color.</summary>
 		public void Replace(Color oldColor, Color newColor)
 		{
 			for(int i = 0; i < colors.Count; i++)
@@ -105,6 +115,8 @@ namespace WithoutHaste.Drawing.Colors
 			}
 		}
 
+		/// <summary>Replace the color at a specific position with another color.</summary>
+		/// <exception cref="IndexOutOfRangeException">Index is too low or too high for palette.</exception>
 		public void ReplaceAt(int index, Color newColor)
 		{
 			if(index < 0 || index >= colors.Count)
