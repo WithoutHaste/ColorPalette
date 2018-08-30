@@ -6,7 +6,12 @@ Terminology:
 * I: Inclusive  
 * E: Exclusive  
 
-Constants:  
+## Examples
+
+IE: Minimum value included in range, Maximum value excluded from range.
+
+## Constants
+
 * Invalid  
 * II: Min and max both included in range.  
 * IE: Only min included in range.  
