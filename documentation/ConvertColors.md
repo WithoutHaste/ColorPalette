@@ -67,21 +67,19 @@ Returns: Format #RRGGBB
 
 Converts Color to [HSV](HSV.md), ignoring Alpha.
 
-## Methods
-
-### TryParseHexadecimal(System.String, System.Drawing.Color@)
+### Boolean TryParseHexadecimal(System.String text, System.Drawing.Color@ color)
 
 Attempts to convert Hexadecimal string to Color. Does not throw exceptions.
 
 Returns: True, if parse is successful.
 
-### TryParseHSV(System.String, System.Drawing.Color@)
+### Boolean TryParseHSV(System.String text, System.Drawing.Color@ color)
 
 Attempts to convert Hue, Saturation, Value string to Color. Does not throw exceptions.
 
 Returns: True, if parse is successful.
 
-### TryParseRGB(System.String, System.Drawing.Color@)
+### Boolean TryParseRGB(System.String text, System.Drawing.Color@ color)
 
 Attempts to convert Red, Green, Blue string to Color. Does not throw exceptions.
 
