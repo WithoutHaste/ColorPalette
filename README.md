@@ -8,10 +8,6 @@ Colors are passed as System.Drawing.Color.
 
 This library is under active development. Report bugs and request features on Github, or to wohaste@gmail.com.
 
-## Download
-
-Library file located at Colors/bin/Release/WithoutHaste.Drawing.Colors.dll
-
 ## Requirements
 
 System.Drawing.dll
@@ -37,4 +33,7 @@ Other C# libraries:
 
 ## Version Notes
 
-Version 1 in development.
+Uses [Semantic Versioning 2.0.0](https://semver.org/).
+
+[Version 1.0.0 Available](https://github.com/WithoutHaste/WithoutHaste.Drawing.Colors/releases/tag/v1.0.0)
+
