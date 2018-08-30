@@ -35,5 +35,5 @@ Other C# libraries:
 
 Uses [Semantic Versioning 2.0.0](https://semver.org/).
 
-[Version 1.0.0 Available](https://github.com/WithoutHaste/WithoutHaste.Drawing.Colors/releases/tag/v1.0.0)
+[Initial Release - v1.0.0](https://github.com/WithoutHaste/WithoutHaste.Drawing.Colors/releases/tag/v1.0.0)
 
