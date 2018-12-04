@@ -4,8 +4,8 @@ Defines whether minimum and maximum values are included in the range.
 
 **Remarks:**  
 * Terminology:  
-* &lt;term&gt;I&lt;/term&gt;&lt;description&gt;Inclusive&lt;/description&gt;  
-* &lt;term&gt;E&lt;/term&gt;&lt;description&gt;Exclusive&lt;/description&gt;  
+* I: Inclusive  
+* E: Exclusive  
 
 # Examples
 

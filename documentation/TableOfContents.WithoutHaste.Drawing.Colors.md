@@ -65,7 +65,7 @@ File extension is not supported.
 Error related to the format of a file.  
 
   
-[**OutOfRangeException&lt;T&gt;**](WithoutHaste.Drawing.Colors.OutOfRangeException<T>.md)  
+[**OutOfRangeException&lt;T&gt;**](WithoutHaste.Drawing.Colors.OutOfRangeException_T_.md)  
 Value was not in the expected range.  
 
   
