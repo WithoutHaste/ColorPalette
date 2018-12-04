@@ -9,3 +9,4 @@ C:\DataDrive\Github\WithoutHaste.Drawing.Colors\Colors\obj\Release\Colors.csproj
 C:\DataDrive\Github\WithoutHaste.Drawing.Colors\Colors\obj\Release\WithoutHaste.Drawing.Colors.dll
 C:\DataDrive\Github\WithoutHaste.Drawing.Colors\Colors\obj\Release\WithoutHaste.Drawing.Colors.pdb
 E:\GitHub\WithoutHaste.Drawing.Colors\Colors\bin\Release\WithoutHaste.Drawing.Colors.XML
+C:\DataDrive\Github\WithoutHaste.Drawing.Colors\Colors\bin\Release\WithoutHaste.Drawing.Colors.XML

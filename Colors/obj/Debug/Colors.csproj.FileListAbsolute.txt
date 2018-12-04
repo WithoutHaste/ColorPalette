@@ -3,3 +3,9 @@ E:\GitHub\WithoutHaste.Drawing.Colors\Colors\bin\Debug\WithoutHaste.Drawing.Colo
 E:\GitHub\WithoutHaste.Drawing.Colors\Colors\obj\Debug\WithoutHaste.Drawing.Colors.dll
 E:\GitHub\WithoutHaste.Drawing.Colors\Colors\obj\Debug\WithoutHaste.Drawing.Colors.pdb
 E:\GitHub\WithoutHaste.Drawing.Colors\Colors\obj\Debug\Colors.csprojResolveAssemblyReference.cache
+C:\DataDrive\Github\WithoutHaste.Drawing.Colors\Colors\bin\Debug\WithoutHaste.Drawing.Colors.XML
+C:\DataDrive\Github\WithoutHaste.Drawing.Colors\Colors\bin\Debug\WithoutHaste.Drawing.Colors.dll
+C:\DataDrive\Github\WithoutHaste.Drawing.Colors\Colors\bin\Debug\WithoutHaste.Drawing.Colors.pdb
+C:\DataDrive\Github\WithoutHaste.Drawing.Colors\Colors\obj\Debug\Colors.csprojResolveAssemblyReference.cache
+C:\DataDrive\Github\WithoutHaste.Drawing.Colors\Colors\obj\Debug\WithoutHaste.Drawing.Colors.dll
+C:\DataDrive\Github\WithoutHaste.Drawing.Colors\Colors\obj\Debug\WithoutHaste.Drawing.Colors.pdb
