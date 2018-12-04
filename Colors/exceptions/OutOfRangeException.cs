@@ -10,17 +10,8 @@ namespace WithoutHaste.Drawing.Colors
 	/// Defines whether minimum and maximum values are included in the range.
 	/// </summary>
 	/// <remarks>
-	///  <list type="bullet">
-	///   <listheader>
-	///   Terminology:
-	///   </listheader>
-	///   <item>
-	///    <term>I</term><description>Inclusive</description>
-	///   </item>
-	///   <item>
-	///    <term>E</term><description>Exclusive</description>
-	///   </item>
-	///  </list>
+	/// I = Inclusive = Value included in range.
+	/// E = Exclusive = Value excluded from range.
 	/// </remarks>
 	/// <example>IE: Minimum value included in range, Maximum value excluded from range.</example>
 	public enum RangeType {

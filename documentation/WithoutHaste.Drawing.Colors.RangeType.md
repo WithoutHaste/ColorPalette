@@ -3,9 +3,8 @@
 Defines whether minimum and maximum values are included in the range.  
 
 **Remarks:**  
-* Terminology:  
-* I: Inclusive  
-* E: Exclusive  
+I = Inclusive = Value included in range.  
+E = Exclusive = Value excluded from range.  
 
 # Examples
 

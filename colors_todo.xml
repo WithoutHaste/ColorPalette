@@ -46,7 +46,7 @@
 - ACOFormatException DONE
 - ExtensionNotSupportedException DONE
 - FileFormatException DONE
-- OutOfRangeException - header and constructors for generic types - list item with whitespace around elements</Data>
+- OutOfRangeException - header and constructors for generic types</Data>
         </Cell>
         <Cell>
           <Data ss:Type="String">Todo</Data>
