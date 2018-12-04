@@ -46,7 +46,7 @@
 - ACOFormatException DONE
 - ExtensionNotSupportedException DONE
 - FileFormatException DONE
-- OutOfRangeException - header and constructors for generic types</Data>
+- OutOfRangeException - cant see class-generic in constructor</Data>
         </Cell>
         <Cell>
           <Data ss:Type="String">Todo</Data>
