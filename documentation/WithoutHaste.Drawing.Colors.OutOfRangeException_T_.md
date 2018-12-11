@@ -33,5 +33,5 @@ Value that was out of range.
 
 # Constructors
 
-## OutOfRangeException&lt;T&gt;(string message, string paramName,  minimum,  maximum, [RangeType](WithoutHaste.Drawing.Colors.RangeType.md) type,  value)
+## OutOfRangeException&lt;T&gt;(string message, string paramName, T minimum, T maximum, [RangeType](WithoutHaste.Drawing.Colors.RangeType.md) type, T value)
 

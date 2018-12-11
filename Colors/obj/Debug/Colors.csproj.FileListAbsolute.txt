@@ -9,3 +9,4 @@ C:\DataDrive\Github\WithoutHaste.Drawing.Colors\Colors\bin\Debug\WithoutHaste.Dr
 C:\DataDrive\Github\WithoutHaste.Drawing.Colors\Colors\obj\Debug\Colors.csprojResolveAssemblyReference.cache
 C:\DataDrive\Github\WithoutHaste.Drawing.Colors\Colors\obj\Debug\WithoutHaste.Drawing.Colors.dll
 C:\DataDrive\Github\WithoutHaste.Drawing.Colors\Colors\obj\Debug\WithoutHaste.Drawing.Colors.pdb
+E:\GitHub\WithoutHaste.Drawing.Colors\Colors\bin\Debug\WithoutHaste.Drawing.Colors.XML
