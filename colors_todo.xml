@@ -38,54 +38,6 @@
       </Row>
       <Row>
         <Cell>
-          <Data ss:Type="Number">6</Data>
-        </Cell>
-        <Cell ss:StyleID="paragraph">
-          <Data ss:Type="String">check Markdown documentation
-- ACOColorSpaceException DONE
-- ACOFormatException DONE
-- ExtensionNotSupportedException DONE
-- FileFormatException DONE
-- OutOfRangeException - cant see class-generic in constructor</Data>
-        </Cell>
-        <Cell>
-          <Data ss:Type="String">Todo</Data>
-        </Cell>
-        <Cell>
-          <Data ss:Type="String">Test</Data>
-        </Cell>
-        <Cell ss:StyleID="cellShortDate">
-          <Data ss:Type="DateTime">2018-12-03T00:00:00.000</Data>
-        </Cell>
-      </Row>
-      <Row>
-        <Cell>
-          <Data ss:Type="Number">7</Data>
-        </Cell>
-        <Cell ss:StyleID="paragraph">
-          <Data ss:Type="String">check Markdown documentation
-- ColorPalette
-- ConvertColors
-- FormatACO
-- FormatGPL
-- Format PAL
-- HSV
-- IO
-- IPaletteFormat
-- Word</Data>
-        </Cell>
-        <Cell>
-          <Data ss:Type="String">Todo</Data>
-        </Cell>
-        <Cell>
-          <Data ss:Type="String">Test</Data>
-        </Cell>
-        <Cell ss:StyleID="cellShortDate">
-          <Data ss:Type="DateTime">2018-12-03T00:00:00.000</Data>
-        </Cell>
-      </Row>
-      <Row>
-        <Cell>
           <Data ss:Type="Number">8</Data>
         </Cell>
         <Cell ss:StyleID="paragraph">
@@ -201,6 +153,60 @@
         </Cell>
         <Cell ss:StyleID="header">
           <Data ss:Type="String">Done</Data>
+        </Cell>
+      </Row>
+      <Row>
+        <Cell>
+          <Data ss:Type="Number">7</Data>
+        </Cell>
+        <Cell ss:StyleID="paragraph">
+          <Data ss:Type="String">check Markdown documentation
+- ColorPalette - DONE
+- ConvertColors - DONE
+- FormatACO - DONE
+- FormatGPL - DONE
+- Format PAL - DONE
+- HSV - DONE
+- IO - INTERNAL
+- IPaletteFormat - DONE
+- Word - INTERNAL</Data>
+        </Cell>
+        <Cell>
+          <Data ss:Type="String">Done</Data>
+        </Cell>
+        <Cell>
+          <Data ss:Type="String">Test</Data>
+        </Cell>
+        <Cell ss:StyleID="cellShortDate">
+          <Data ss:Type="DateTime">2018-12-03T00:00:00.000</Data>
+        </Cell>
+        <Cell ss:StyleID="cellShortDate">
+          <Data ss:Type="DateTime">2018-12-12T00:00:00.000</Data>
+        </Cell>
+      </Row>
+      <Row>
+        <Cell>
+          <Data ss:Type="Number">6</Data>
+        </Cell>
+        <Cell ss:StyleID="paragraph">
+          <Data ss:Type="String">check Markdown documentation
+- ACOColorSpaceException DONE
+- ACOFormatException DONE
+- ExtensionNotSupportedException DONE
+- FileFormatException DONE
+- OutOfRangeException - DONE</Data>
+        </Cell>
+        <Cell>
+          <Data ss:Type="String">Done</Data>
+        </Cell>
+        <Cell>
+          <Data ss:Type="String">Test</Data>
+        </Cell>
+        <Cell ss:StyleID="cellShortDate">
+          <Data ss:Type="DateTime">2018-12-03T00:00:00.000</Data>
+        </Cell>
+        <Cell ss:StyleID="cellShortDate">
+          <Data ss:Type="DateTime">2018-12-11T00:00:00.000</Data>
         </Cell>
       </Row>
       <Row>

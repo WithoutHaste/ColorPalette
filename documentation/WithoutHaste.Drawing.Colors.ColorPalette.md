@@ -81,6 +81,9 @@ Replace the color at a specific position with another color.
 
 Save a color palette to file. Supported file formats: .aco, .gpl, .pal.  
 
+**Exceptions:**  
+* **[NotImplementedException](https://docs.microsoft.com/en-us/dotnet/api/system.notimplementedexception)**: Palette format not supported.  
+
 # Static Methods
 
 ## Load(string fullFilename)
@@ -88,4 +91,7 @@ Save a color palette to file. Supported file formats: .aco, .gpl, .pal.
 **static ColorPalette**  
 
 Load a color palette from file. Supported file formats: .aco, .gpl, .pal.  
+
+**Exceptions:**  
+* **[NotImplementedException](https://docs.microsoft.com/en-us/dotnet/api/system.notimplementedexception)**: Palette format not supported.  
 

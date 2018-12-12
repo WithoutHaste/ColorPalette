@@ -28,9 +28,6 @@ Value range [0,1]
 
 ## HSV(float hue, float saturation, float value)
 
-**Misc:**  
-  
-
 **Parameters:**  
 * **float hue**: range [0, 360)  
 * **float saturation**: range [0, 1]  
@@ -41,4 +38,6 @@ Value range [0,1]
 ## ToString()
 
 **virtual string**  
+
+To format "(H,S,V)".  
 

@@ -24,7 +24,6 @@ namespace WithoutHaste.Drawing.Colors
 		/// </summary>
 		public float Value;
 
-		/// <summary></summary>
 		/// <param name="hue">range [0, 360)</param>
 		/// <param name="saturation">range [0, 1]</param>
 		/// <param name="value">range [0,1]</param>
@@ -39,7 +38,7 @@ namespace WithoutHaste.Drawing.Colors
 			Value = value;
 		}
 
-		/// <summary></summary>
+		/// <summary>To format "(H,S,V)".</summary>
 		public override string ToString()
 		{
 			return String.Format("({0},{1},{2})", Hue, Saturation, Value);

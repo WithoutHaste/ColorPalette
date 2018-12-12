@@ -35,6 +35,7 @@ namespace WithoutHaste.Drawing.Colors
 		/// <summary>
 		/// Load a color palette from file. Supported file formats: .aco, .gpl, .pal.
 		/// </summary>
+		/// <exception cref='NotImplementedException'>Palette format not supported.</exception>
 		public static ColorPalette Load(string fullFilename)
 		{
 			switch(Path.GetExtension(fullFilename).ToLower())
@@ -53,6 +54,7 @@ namespace WithoutHaste.Drawing.Colors
 		/// <summary>
 		/// Save a color palette to file. Supported file formats: .aco, .gpl, .pal.
 		/// </summary>
+		/// <exception cref='NotImplementedException'>Palette format not supported.</exception>
 		public void Save(string fullFilename)
 		{
 			switch(Path.GetExtension(fullFilename).ToLower())
