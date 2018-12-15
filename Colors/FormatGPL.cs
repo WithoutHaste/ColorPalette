@@ -32,6 +32,15 @@ namespace WithoutHaste.Drawing.Colors
 			Load(fileLines);
 		}
 
+		/// <summary>
+		/// Load color palette from file contents.
+		/// </summary>
+		/// <param name="fileLines">The full text of the *.gpl file.</param>
+		public FormatGPL(string[] fileLines)
+		{
+			Load(fileLines);
+		}
+
 		private string[] RemoveComments(string[] fileLines)
 		{
 			return fileLines.Where(line => !(line.StartsWith("#"))).ToArray();
@@ -49,7 +58,7 @@ namespace WithoutHaste.Drawing.Colors
 		/// <param name="fullFilename">Path + filename + extension.</param>
 		public static void Save(string fullFilename, ColorPalette palette)
 		{
-			string[] fileLines = ConvertToFileLines(palette);
+			string[] fileLines = ToTextFormat(palette);
 			File.WriteAllLines(fullFilename, fileLines);
 		}
 
@@ -62,14 +71,12 @@ namespace WithoutHaste.Drawing.Colors
 
 		private void Load(string[] fileLines)
 		{
-			colorPalette.Clear();
-
+			colorPalette = new ColorPalette();
 			if(fileLines.Length <= 3)
 				return;
 
 			fileLines = RemoveComments(fileLines);
 
-			colorPalette = new ColorPalette();
 			Header = fileLines[0]; //GIMP Palette
 			Name = fileLines[1]; //Name: name of palette
 			string columns = fileLines[2];
@@ -97,7 +104,10 @@ namespace WithoutHaste.Drawing.Colors
 			}
 		}
 
-		private static string[] ConvertToFileLines(ColorPalette palette)
+		/// <summary>
+		/// Convert palette to GPL-formatted text.
+		/// </summary>
+		public static string[] ToTextFormat(ColorPalette palette)
 		{
 			List<string> fileLines = new List<string>();
 			fileLines.Add("GIMP Palette"); //header

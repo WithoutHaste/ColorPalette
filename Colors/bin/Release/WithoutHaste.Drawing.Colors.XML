@@ -16,17 +16,25 @@
             <summary>Length of palette.</summary>
         </member>
         <member name="M:WithoutHaste.Drawing.Colors.ColorPalette.#ctor">
-            <summary></summary>
+            <summary>Initialize empty palette.</summary>
+        </member>
+        <member name="M:WithoutHaste.Drawing.Colors.ColorPalette.#ctor(System.Drawing.Color[])">
+            <summary>Initialize palette with <paramref name='colors'/>.</summary>
+        </member>
+        <member name="M:WithoutHaste.Drawing.Colors.ColorPalette.#ctor(System.Collections.Generic.List{System.Drawing.Color})">
+            <summary>Initialize palette with <paramref name='colors'/>.</summary>
         </member>
         <member name="M:WithoutHaste.Drawing.Colors.ColorPalette.Load(System.String)">
             <summary>
             Load a color palette from file. Supported file formats: .aco, .gpl, .pal.
             </summary>
+            <exception cref='T:System.NotImplementedException'>Palette format not supported.</exception>
         </member>
         <member name="M:WithoutHaste.Drawing.Colors.ColorPalette.Save(System.String)">
             <summary>
             Save a color palette to file. Supported file formats: .aco, .gpl, .pal.
             </summary>
+            <exception cref='T:System.NotImplementedException'>Palette format not supported.</exception>
         </member>
         <member name="M:WithoutHaste.Drawing.Colors.ColorPalette.Add(System.Drawing.Color)">
             <summary>
@@ -54,6 +62,27 @@
         <member name="M:WithoutHaste.Drawing.Colors.ColorPalette.Clear">
             <summary>
             Remove all colors from palette.
+            </summary>
+        </member>
+        <member name="M:WithoutHaste.Drawing.Colors.ColorPalette.op_Equality(WithoutHaste.Drawing.Colors.ColorPalette,WithoutHaste.Drawing.Colors.ColorPalette)">
+            <duplicate cref="M:WithoutHaste.Drawing.Colors.ColorPalette.Equals(System.Object)" />
+        </member>
+        <member name="M:WithoutHaste.Drawing.Colors.ColorPalette.op_Inequality(WithoutHaste.Drawing.Colors.ColorPalette,WithoutHaste.Drawing.Colors.ColorPalette)">
+            <duplicate cref="M:WithoutHaste.Drawing.Colors.ColorPalette.Equals(System.Object)" />
+        </member>
+        <member name="M:WithoutHaste.Drawing.Colors.ColorPalette.Equals(System.Object)">
+            <summary>
+            Palettes are equal if they contain the same colors in the same order.
+            Colors are compared by Alpha/Red/Blue/Green, not by Name.
+            </summary>
+        </member>
+        <member name="M:WithoutHaste.Drawing.Colors.ColorPalette.GetHashCode">
+            <summary></summary>
+        </member>
+        <member name="M:WithoutHaste.Drawing.Colors.ColorPalette.ColorsMatch(System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+            Returns true if both colors have the same Alpha/Red/Green/Blue values, 
+            or if both colors are null.
             </summary>
         </member>
         <member name="T:WithoutHaste.Drawing.Colors.ACOColorSpaceException">
@@ -194,6 +223,12 @@
             <summary>Load color palette from file.</summary>
             <param name="fullFilename">Path + filename + extension.</param>
         </member>
+        <member name="M:WithoutHaste.Drawing.Colors.FormatGPL.#ctor(System.String[])">
+            <summary>
+            Load color palette from file contents.
+            </summary>
+            <param name="fileLines">The full text of the *.gpl file.</param>
+        </member>
         <member name="M:WithoutHaste.Drawing.Colors.FormatGPL.Load(System.String)">
             <summary>Load and return color palette from file.</summary>
             <param name="fullFilename">Path + filename + extension.</param>
@@ -205,6 +240,11 @@
         <member name="M:WithoutHaste.Drawing.Colors.FormatGPL.Save(System.String)">
             <summary>Save color palette in standard .gpl format</summary>
             <param name="fullFilename">Path + filename + extension.</param>
+        </member>
+        <member name="M:WithoutHaste.Drawing.Colors.FormatGPL.ToTextFormat(WithoutHaste.Drawing.Colors.ColorPalette)">
+            <summary>
+            Convert palette to GPL-formatted text.
+            </summary>
         </member>
         <member name="T:WithoutHaste.Drawing.Colors.FormatPAL">
             <summary>
@@ -257,13 +297,12 @@
             </summary>
         </member>
         <member name="M:WithoutHaste.Drawing.Colors.HSV.#ctor(System.Single,System.Single,System.Single)">
-            <summary></summary>
             <param name="hue">range [0, 360)</param>
             <param name="saturation">range [0, 1]</param>
             <param name="value">range [0,1]</param>
         </member>
         <member name="M:WithoutHaste.Drawing.Colors.HSV.ToString">
-            <summary></summary>
+            <summary>To format "(H,S,V)".</summary>
         </member>
         <member name="T:WithoutHaste.Drawing.Colors.IPaletteFormat">
             <summary>

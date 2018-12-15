@@ -22,6 +22,16 @@ Length of palette.
 
 ## ColorPalette()
 
+Initialize empty palette.  
+
+## ColorPalette([System.Drawing.Color[]](https://docs.microsoft.com/en-us/dotnet/api/system.array) colors)
+
+Initialize palette with _colors_.  
+
+## ColorPalette([List&lt;System.Drawing.Color&gt;](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1) colors)
+
+Initialize palette with _colors_.  
+
 # Methods
 
 ## Add([System.Drawing.Color](https://docs.microsoft.com/en-us/dotnet/api/system.drawing.color) color)
@@ -38,6 +48,17 @@ Index of added color.
 **void**  
 
 Remove all colors from palette.  
+
+## Equals(object b)
+
+**virtual bool**  
+
+Palettes are equal if they contain the same colors in the same order.  
+Colors are compared by Alpha/Red/Blue/Green, not by Name.  
+
+## GetHashCode()
+
+**virtual int**  
 
 ## Insert([System.Drawing.Color](https://docs.microsoft.com/en-us/dotnet/api/system.drawing.color) color, int index)
 
@@ -86,6 +107,13 @@ Save a color palette to file. Supported file formats: .aco, .gpl, .pal.
 
 # Static Methods
 
+## ColorsMatch([System.Drawing.Color](https://docs.microsoft.com/en-us/dotnet/api/system.drawing.color) a, [System.Drawing.Color](https://docs.microsoft.com/en-us/dotnet/api/system.drawing.color) b)
+
+**static bool**  
+
+Returns true if both colors have the same Alpha/Red/Green/Blue values,   
+or if both colors are null.  
+
 ## Load(string fullFilename)
 
 **static ColorPalette**  
@@ -94,4 +122,16 @@ Load a color palette from file. Supported file formats: .aco, .gpl, .pal.
 
 **Exceptions:**  
 * **[NotImplementedException](https://docs.microsoft.com/en-us/dotnet/api/system.notimplementedexception)**: Palette format not supported.  
+
+# Operators
+
+## bool = ColorPalette a == ColorPalette b
+
+Palettes are equal if they contain the same colors in the same order.  
+Colors are compared by Alpha/Red/Blue/Green, not by Name.  
+
+## bool = ColorPalette a != ColorPalette b
+
+Palettes are equal if they contain the same colors in the same order.  
+Colors are compared by Alpha/Red/Blue/Green, not by Name.  
 

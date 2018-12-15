@@ -28,6 +28,13 @@ Load color palette from file.
 **Parameters:**  
 * **string fullFilename**: Path + filename + extension.  
 
+## FormatGPL([String[]](https://docs.microsoft.com/en-us/dotnet/api/system.array) fileLines)
+
+Load color palette from file contents.  
+
+**Parameters:**  
+* **[String[]](https://docs.microsoft.com/en-us/dotnet/api/system.array) fileLines**: The full text of the *.gpl file.  
+
 # Methods
 
 ## Save(string fullFilename)
@@ -58,4 +65,10 @@ Save color palette in standard .gpl format
 
 **Parameters:**  
 * **string fullFilename**: Path + filename + extension.  
+
+## ToTextFormat([ColorPalette](WithoutHaste.Drawing.Colors.ColorPalette.md) palette)
+
+**static [String[]](https://docs.microsoft.com/en-us/dotnet/api/system.array)**  
+
+Convert palette to GPL-formatted text.  
 

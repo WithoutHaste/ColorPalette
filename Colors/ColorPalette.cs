@@ -27,9 +27,21 @@ namespace WithoutHaste.Drawing.Colors
 			}
 		}
 
-		/// <summary></summary>
+		/// <summary>Initialize empty palette.</summary>
 		public ColorPalette()
 		{
+		}
+
+		/// <summary>Initialize palette with <paramref name='colors'/>.</summary>
+		public ColorPalette(params Color[] colors)
+		{
+			this.colors = new List<Color>(colors);
+		}
+
+		/// <summary>Initialize palette with <paramref name='colors'/>.</summary>
+		public ColorPalette(List<Color> colors)
+		{
+			this.colors = new List<Color>(colors);
 		}
 
 		/// <summary>
@@ -133,5 +145,77 @@ namespace WithoutHaste.Drawing.Colors
 		{
 			colors.Clear();
 		}
+
+		#region Low Level
+
+		/// <duplicate cref="Equals(object)" />
+		public static bool operator ==(ColorPalette a, ColorPalette b)
+		{
+			if(object.ReferenceEquals(a, null) && object.ReferenceEquals(b, null))
+				return true;
+			if(object.ReferenceEquals(a, null) || object.ReferenceEquals(b, null))
+				return false;
+			return a.Equals(b);
+		}
+
+		/// <duplicate cref="Equals(object)" />
+		public static bool operator !=(ColorPalette a, ColorPalette b)
+		{
+			if(object.ReferenceEquals(a, null) && object.ReferenceEquals(b, null))
+				return false;
+			if(object.ReferenceEquals(a, null) || object.ReferenceEquals(b, null))
+				return true;
+			return !a.Equals(b);
+		}
+
+		/// <summary>
+		/// Palettes are equal if they contain the same colors in the same order.
+		/// Colors are compared by Alpha/Red/Blue/Green, not by Name.
+		/// </summary>
+		public override bool Equals(Object b)
+		{
+			if(!(b is ColorPalette))
+				return false;
+			if(object.ReferenceEquals(this, null) && object.ReferenceEquals(b, null))
+				return true;
+			if(object.ReferenceEquals(this, null) || object.ReferenceEquals(b, null))
+				return false;
+
+			ColorPalette other = (b as ColorPalette);
+			if(this.colors.Count != other.colors.Count)
+				return false;
+			for(int i = 0; i < this.colors.Count; i++)
+			{
+				if(!ColorsMatch(this.colors[i], other.colors[i]))
+					return false;
+			}
+			return true;
+		}
+
+		/// <summary></summary>
+		public override int GetHashCode()
+		{
+			int hashCode = 0;
+			foreach(Color color in colors)
+			{
+				hashCode = hashCode ^ color.GetHashCode();
+			}
+			return hashCode;
+		}
+
+		/// <summary>
+		/// Returns true if both colors have the same Alpha/Red/Green/Blue values, 
+		/// or if both colors are null.
+		/// </summary>
+		public static bool ColorsMatch(Color a, Color b)
+		{
+			if(object.ReferenceEquals(a, null) && object.ReferenceEquals(b, null))
+				return true;
+			if(object.ReferenceEquals(a, null) || object.ReferenceEquals(b, null))
+				return false;
+			return (a.A == b.A && a.R == b.R && a.G == b.G && a.B == b.B);
+		}
+
+		#endregion
 	}
 }
