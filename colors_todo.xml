@@ -55,6 +55,27 @@
       </Row>
       <Row>
         <Cell>
+          <Data ss:Type="Number">14</Data>
+        </Cell>
+        <Cell ss:StyleID="paragraph">
+          <Data ss:Type="String">based on Exception Design Patterns wiki
+I shouldn't need such detailed exception types as
+ACOFormatException
+ACOColorSpaceException
+look into refectoring this</Data>
+        </Cell>
+        <Cell>
+          <Data ss:Type="String">Todo</Data>
+        </Cell>
+        <Cell>
+          <Data ss:Type="String">Feature - Minor</Data>
+        </Cell>
+        <Cell ss:StyleID="cellShortDate">
+          <Data ss:Type="DateTime">2018-12-15T00:00:00.000</Data>
+        </Cell>
+      </Row>
+      <Row>
+        <Cell>
           <Data ss:Type="Number">4</Data>
         </Cell>
         <Cell ss:StyleID="paragraph">
@@ -136,6 +157,28 @@
         </Cell>
         <Cell ss:StyleID="header">
           <Data ss:Type="String">Done</Data>
+        </Cell>
+      </Row>
+      <Row>
+        <Cell>
+          <Data ss:Type="Number">15</Data>
+        </Cell>
+        <Cell ss:StyleID="paragraph">
+          <Data ss:Type="String">removing custom FileFormatException
+because found out System.IO.Packaging has one already
+minor refactor</Data>
+        </Cell>
+        <Cell>
+          <Data ss:Type="String">Done</Data>
+        </Cell>
+        <Cell>
+          <Data ss:Type="String">Feature - Minor</Data>
+        </Cell>
+        <Cell ss:StyleID="cellShortDate">
+          <Data ss:Type="DateTime">2018-12-15T00:00:00.000</Data>
+        </Cell>
+        <Cell ss:StyleID="cellShortDate">
+          <Data ss:Type="DateTime">2018-12-15T00:00:00.000</Data>
         </Cell>
       </Row>
       <Row>
@@ -364,7 +407,7 @@ renaming it to ToTextFormat</Data>
           </Data>
         </Cell>
         <Cell>
-          <Data ss:Type="Number">13</Data>
+          <Data ss:Type="Number">15</Data>
         </Cell>
       </Row>
       <Row>

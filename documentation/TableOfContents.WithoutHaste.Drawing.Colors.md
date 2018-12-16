@@ -61,10 +61,6 @@ Error related to .aco file format.
 File extension is not supported.  
 
   
-[**FileFormatException**](WithoutHaste.Drawing.Colors.FileFormatException.md)  
-Error related to the format of a file.  
-
-  
 [**OutOfRangeException&lt;T&gt;**](WithoutHaste.Drawing.Colors.OutOfRangeException_T_.md)  
 Value was not in the expected range.  
 

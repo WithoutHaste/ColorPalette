@@ -116,12 +116,6 @@
         <member name="M:WithoutHaste.Drawing.Colors.ExtensionNotSupportedException.#ctor(System.String,System.String,System.String)">
             <summary></summary>
         </member>
-        <member name="T:WithoutHaste.Drawing.Colors.FileFormatException">
-            <summary> Error related to the format of a file.</summary>
-        </member>
-        <member name="M:WithoutHaste.Drawing.Colors.FileFormatException.#ctor(System.String)">
-            <summary></summary>
-        </member>
         <member name="T:WithoutHaste.Drawing.Colors.RangeType">
             <summary>
             Defines whether minimum and maximum values are included in the range.

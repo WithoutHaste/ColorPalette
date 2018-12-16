@@ -43,13 +43,13 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ColorPalette.cs" />
     <Compile Include="exceptions\ACOColorSpaceException.cs" />
     <Compile Include="exceptions\ACOFormatException.cs" />
     <Compile Include="exceptions\ExtensionNotSupportedException.cs" />
-    <Compile Include="exceptions\FileFormatException.cs" />
     <Compile Include="exceptions\OutOfRangeException.cs" />
     <Compile Include="FormatACO.cs" />
     <Compile Include="FormatGPL.cs" />
