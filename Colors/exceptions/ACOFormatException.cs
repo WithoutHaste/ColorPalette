@@ -7,8 +7,11 @@ using System.Threading.Tasks;
 
 namespace WithoutHaste.Drawing.Colors
 {
+	//todo: the meaning of FormatException does not match this use
+	//but I don't want a dependency on WindowsBase.dll just for FileFormatException
+
 	/// <summary>Error related to .aco file format.</summary>
-	public class ACOFormatException : System.IO.FileFormatException
+	public class ACOFormatException : FormatException
 	{
 		/// <summary></summary>
 		public ACOFormatException(string message) : base(message)
