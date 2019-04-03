@@ -6,8 +6,6 @@ A C# library for color operations.
 
 Colors are passed as System.Drawing.Color.
 
-This library is under active development. Report bugs and request features on Github, or to wohaste@gmail.com.
-
 ## Requirements
 
 System.Drawing.dll
